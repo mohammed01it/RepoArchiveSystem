@@ -19,14 +19,10 @@ using ArchiveSystem.Folder_view_data;
 
 namespace ArchiveSystem
 {
-  
+
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
-
-       
          
-
-
         public Form1()
         {
             InitializeComponent();
@@ -40,16 +36,35 @@ namespace ArchiveSystem
         string FTP_pass = ConfigurationSettings.AppSettings["FTP_pass"];
 
 
-       
+
         public static string _con = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         SqlConnection con = new SqlConnection(_con);
 
-        private void panel23_Paint(object sender, PaintEventArgs e)
-        {
+     
 
+        void Refresh_Folders()
+        {
+            try
+            {
+                string[] folders = Directory.GetDirectories(Doc_source);
+                DataTable folderDT = new DataTable();
+
+                folderDT.Columns.Add("اسم الملف");
+
+                for (int i = 0; i < folders.Length; i++)
+                {
+                    FileInfo folder = new FileInfo(folders[i]);
+                    folderDT.Rows.Add(folder.Name);
+                }
+                DGV_Folders.DataSource = folderDT;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
         
-
         private void Form1_Load(object sender, EventArgs e)
         {
             //--------------shukri-----------------------
@@ -68,8 +83,8 @@ namespace ArchiveSystem
 
 
             Doc_source = Properties.Settings.Default.DOC_Source.ToString(); // doc source
-            
-             
+
+
             metroTabControl1.RightToLeft = RightToLeft.Yes;
             metroTabControl1.RightToLeftLayout = true;
 
@@ -93,34 +108,9 @@ namespace ArchiveSystem
 
 
 
-           
+            Refresh_Folders();
+             
 
-
-
-
-
-
-
-
-            try
-            {
-                string[] folders = Directory.GetDirectories(Doc_source); 
-                DataTable folderDT = new DataTable();
-
-                folderDT.Columns.Add("اسم الملف");
-
-                for (int i = 0; i < folders.Length; i++)
-                {
-                    FileInfo folder = new FileInfo(folders[i]);
-                    folderDT.Rows.Add(folder.Name);
-                }
-                DGV_Folders.DataSource = folderDT;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
         }
 
         private void DGV_Folders_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -128,19 +118,19 @@ namespace ArchiveSystem
 
             String folderName = DGV_Folders.Rows[e.RowIndex].Cells[0].Value.ToString();
             selectedFolder = folderName;
- 
-            string[] Files = Directory.GetFiles(Doc_source +@"\"+ folderName + "", "*.*");//put variable name instade of path
+
+            string[] Files = Directory.GetFiles(Doc_source + @"\" + folderName + "", "*.*");//put variable name instade of path
             DataTable table = new DataTable();
 
             table.Columns.Add("check", typeof(bool));
             table.Columns.Add("File Name");
- 
+
             for (int i = 0; i < Files.Length; i++)
             {
                 FileInfo file = new FileInfo(Files[i]);
-               
+
                 table.Rows.Add(false, file.Name);
-             
+
 
             }
 
@@ -172,13 +162,10 @@ namespace ArchiveSystem
 
                 }
             }
-         
-        }
-
-        private void DGV_Files_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
+
+       
 
         private void BTN_Archive_Click(object sender, EventArgs e)
         {
@@ -200,11 +187,11 @@ namespace ArchiveSystem
             var Typee = "وارد";// bring it from dropdown user chose
             //var BookCat = "كتاب عادي";// bring it from dropdown user chose
             var Code = "cjs2"; //bring it from db
-  
 
-            WebRequest request_ = WebRequest.Create(FTP_ip + Typee +  "/"+ Code + "/");
+
+            WebRequest request_ = WebRequest.Create(FTP_ip + Typee + "/" + Code + "/");
             request_.Method = WebRequestMethods.Ftp.MakeDirectory;
-            request_.Credentials = new NetworkCredential(FTP_user,FTP_pass);
+            request_.Credentials = new NetworkCredential(FTP_user, FTP_pass);
             using (var resp = (FtpWebResponse)request_.GetResponse())
             {
                 Console.WriteLine(resp.StatusCode);
@@ -232,7 +219,7 @@ namespace ArchiveSystem
                     if (file_name == filenamechecked)
                     {
                         FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + Code + "/" + file_name);
-                        request.Credentials = new NetworkCredential(FTP_user,FTP_pass);
+                        request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
                         request.Method = WebRequestMethods.Ftp.UploadFile;
 
                         using (Stream fileStream = File.OpenRead(file))
@@ -267,7 +254,7 @@ namespace ArchiveSystem
             foreach (DataGridViewRow row in DGV_Files.Rows)
             {
                 String file_name = DGV_Files.Rows[e.RowIndex].Cells[1].Value.ToString();
-                Image image2 = Image.FromFile(Doc_source + @"\" + selectedFolder+ @"\" + file_name + "");//put var here
+                Image image2 = Image.FromFile(Doc_source + @"\" + selectedFolder + @"\" + file_name + "");//put var here
                 //pictureBox1.Image=file
                 // Get a PropertyItem from image1.
                 //PropertyItem propItem = image1.GetPropertyItem(20624);
@@ -301,7 +288,7 @@ namespace ArchiveSystem
 
         private void PicB_displayBOOK_Click(object sender, EventArgs e)
         {
-            
+
             // Use default image viewer  
             System.Diagnostics.Process.Start(picture_path);
 
@@ -309,7 +296,7 @@ namespace ArchiveSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void BTN_addfolder_Click(object sender, EventArgs e)
@@ -317,13 +304,10 @@ namespace ArchiveSystem
             string root = Doc_source + @"\" + TXT_addFolder.Text + "";
 
             Directory.CreateDirectory(root);
-            this.Form1_Load(null, null);
+            Refresh_Folders();
         }
 
-        private void DGV_Folders_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
+       
 
         private void BTN_DELFolder_Click(object sender, EventArgs e)
         {
@@ -331,16 +315,10 @@ namespace ArchiveSystem
 
             Directory.Delete(root, true);
 
-            this.Form1_Load(null, null);
-        }
-     
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-          
+            Refresh_Folders();
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void Scanning_Folder_Click(object sender, EventArgs e)
         {
 
             Folder_Brows_DOC_Source.ShowDialog();
@@ -351,34 +329,6 @@ namespace ArchiveSystem
             Properties.Settings.Default.Save();
             this.Form1_Load(null, null);
 
-
-        }
-
-        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
-        {
-
-        }
-
-        public void btn_view_data_dqv_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //dawdawdawd
-            //    aw
-            //    d
-            //    wad
-            //    aw
-            //    d
-            //    aw
-            //    dawd
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //fwad
         }
     }
 }

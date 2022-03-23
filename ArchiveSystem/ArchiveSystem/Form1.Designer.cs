@@ -54,35 +54,35 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.COM_priority = new System.Windows.Forms.ComboBox();
+            this.COM_privicy = new System.Windows.Forms.ComboBox();
+            this.COM_PaperType = new System.Windows.Forms.ComboBox();
+            this.COM_bookType = new System.Windows.Forms.ComboBox();
+            this.DT_bookRecive_date = new System.Windows.Forms.DateTimePicker();
+            this.DT_bookDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.COMLIST_assination = new System.Windows.Forms.CheckedListBox();
             this.BTN_Archive = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TXT_SearchKEys = new System.Windows.Forms.TextBox();
+            this.TXT_bookNumber = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.TXT_notes = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.TXT_To = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TXT_From = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TXT_Subject = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TXT_Book_recive_number = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -107,6 +107,8 @@
             this.lbl_loginDepartment = new System.Windows.Forms.Label();
             this.lbl_LoginUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LBL_USERNAME = new System.Windows.Forms.Label();
+            this.LBL_department = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -230,7 +232,6 @@
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(73, 497);
             this.panel14.TabIndex = 5;
-            this.panel14.Paint += new System.Windows.Forms.PaintEventHandler(this.panel14_Paint);
             // 
             // PicB_displayBOOK
             // 
@@ -434,86 +435,102 @@
             // 
             this.panel12.AutoScroll = true;
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel12.Controls.Add(this.comboBox4);
-            this.panel12.Controls.Add(this.comboBox3);
-            this.panel12.Controls.Add(this.comboBox2);
-            this.panel12.Controls.Add(this.comboBox1);
-            this.panel12.Controls.Add(this.dateTimePicker2);
-            this.panel12.Controls.Add(this.dateTimePicker1);
+            this.panel12.Controls.Add(this.COM_priority);
+            this.panel12.Controls.Add(this.COM_privicy);
+            this.panel12.Controls.Add(this.COM_PaperType);
+            this.panel12.Controls.Add(this.COM_bookType);
+            this.panel12.Controls.Add(this.DT_bookRecive_date);
+            this.panel12.Controls.Add(this.DT_bookDate);
             this.panel12.Controls.Add(this.label5);
-            this.panel12.Controls.Add(this.checkedListBox1);
+            this.panel12.Controls.Add(this.COMLIST_assination);
             this.panel12.Controls.Add(this.BTN_Archive);
-            this.panel12.Controls.Add(this.textBox9);
-            this.panel12.Controls.Add(this.textBox1);
+            this.panel12.Controls.Add(this.TXT_SearchKEys);
+            this.panel12.Controls.Add(this.TXT_bookNumber);
             this.panel12.Controls.Add(this.label7);
             this.panel12.Controls.Add(this.label8);
             this.panel12.Controls.Add(this.label16);
             this.panel12.Controls.Add(this.label9);
-            this.panel12.Controls.Add(this.textBox12);
+            this.panel12.Controls.Add(this.TXT_notes);
             this.panel12.Controls.Add(this.label10);
             this.panel12.Controls.Add(this.label11);
             this.panel12.Controls.Add(this.label21);
             this.panel12.Controls.Add(this.label12);
             this.panel12.Controls.Add(this.label13);
-            this.panel12.Controls.Add(this.textBox7);
+            this.panel12.Controls.Add(this.TXT_To);
             this.panel12.Controls.Add(this.label14);
-            this.panel12.Controls.Add(this.textBox6);
+            this.panel12.Controls.Add(this.TXT_From);
             this.panel12.Controls.Add(this.label15);
-            this.panel12.Controls.Add(this.textBox5);
+            this.panel12.Controls.Add(this.TXT_Subject);
             this.panel12.Controls.Add(this.label17);
             this.panel12.Controls.Add(this.label18);
-            this.panel12.Controls.Add(this.textBox3);
+            this.panel12.Controls.Add(this.TXT_Book_recive_number);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel12.Location = new System.Drawing.Point(274, 0);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(723, 497);
             this.panel12.TabIndex = 3;
             // 
-            // comboBox4
+            // COM_priority
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(484, 227);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(136, 21);
-            this.comboBox4.TabIndex = 10;
+            this.COM_priority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.COM_priority.FormattingEnabled = true;
+            this.COM_priority.Items.AddRange(new object[] {
+            "عاجل",
+            "فوري"});
+            this.COM_priority.Location = new System.Drawing.Point(484, 227);
+            this.COM_priority.Name = "COM_priority";
+            this.COM_priority.Size = new System.Drawing.Size(136, 21);
+            this.COM_priority.TabIndex = 10;
             // 
-            // comboBox3
+            // COM_privicy
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(484, 194);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(136, 21);
-            this.comboBox3.TabIndex = 9;
+            this.COM_privicy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.COM_privicy.FormattingEnabled = true;
+            this.COM_privicy.Items.AddRange(new object[] {
+            "عام",
+            "سري"});
+            this.COM_privicy.Location = new System.Drawing.Point(484, 194);
+            this.COM_privicy.Name = "COM_privicy";
+            this.COM_privicy.Size = new System.Drawing.Size(136, 21);
+            this.COM_privicy.TabIndex = 9;
             // 
-            // comboBox2
+            // COM_PaperType
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(484, 255);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(136, 21);
-            this.comboBox2.TabIndex = 11;
+            this.COM_PaperType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.COM_PaperType.FormattingEnabled = true;
+            this.COM_PaperType.Items.AddRange(new object[] {
+            "استنساخ",
+            "اصلي"});
+            this.COM_PaperType.Location = new System.Drawing.Point(484, 255);
+            this.COM_PaperType.Name = "COM_PaperType";
+            this.COM_PaperType.Size = new System.Drawing.Size(136, 21);
+            this.COM_PaperType.TabIndex = 11;
             // 
-            // comboBox1
+            // COM_bookType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(484, 158);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(136, 21);
-            this.comboBox1.TabIndex = 8;
+            this.COM_bookType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.COM_bookType.FormattingEnabled = true;
+            this.COM_bookType.Location = new System.Drawing.Point(484, 158);
+            this.COM_bookType.Name = "COM_bookType";
+            this.COM_bookType.Size = new System.Drawing.Size(136, 21);
+            this.COM_bookType.TabIndex = 8;
             // 
-            // dateTimePicker2
+            // DT_bookRecive_date
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(484, 124);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(136, 20);
-            this.dateTimePicker2.TabIndex = 4;
+            this.DT_bookRecive_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DT_bookRecive_date.Location = new System.Drawing.Point(484, 124);
+            this.DT_bookRecive_date.Name = "DT_bookRecive_date";
+            this.DT_bookRecive_date.Size = new System.Drawing.Size(136, 20);
+            this.DT_bookRecive_date.TabIndex = 4;
             // 
-            // dateTimePicker1
+            // DT_bookDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(484, 49);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(136, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.DT_bookDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DT_bookDate.Location = new System.Drawing.Point(484, 49);
+            this.DT_bookDate.Name = "DT_bookDate";
+            this.DT_bookDate.Size = new System.Drawing.Size(136, 20);
+            this.DT_bookDate.TabIndex = 2;
+            this.DT_bookDate.Value = new System.DateTime(2022, 3, 23, 0, 0, 0, 0);
             // 
             // label5
             // 
@@ -525,12 +542,12 @@
             this.label5.TabIndex = 165;
             this.label5.Text = "متابعة الاقسام";
             // 
-            // checkedListBox1
+            // COMLIST_assination
             // 
-            this.checkedListBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.checkedListBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.COMLIST_assination.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.COMLIST_assination.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.COMLIST_assination.FormattingEnabled = true;
+            this.COMLIST_assination.Items.AddRange(new object[] {
             "الارشيف",
             "الارشيف",
             "الارشيف",
@@ -543,12 +560,12 @@
             "تكنلوجيا المعللومات",
             "تكنلوجيا المعللومات",
             "تكنلوجيا المعللومات"});
-            this.checkedListBox1.Location = new System.Drawing.Point(345, 255);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.ScrollAlwaysVisible = true;
-            this.checkedListBox1.Size = new System.Drawing.Size(90, 199);
-            this.checkedListBox1.TabIndex = 14;
+            this.COMLIST_assination.Location = new System.Drawing.Point(345, 255);
+            this.COMLIST_assination.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
+            this.COMLIST_assination.Name = "COMLIST_assination";
+            this.COMLIST_assination.ScrollAlwaysVisible = true;
+            this.COMLIST_assination.Size = new System.Drawing.Size(90, 199);
+            this.COMLIST_assination.TabIndex = 14;
             // 
             // BTN_Archive
             // 
@@ -563,21 +580,21 @@
             this.BTN_Archive.UseVisualStyleBackColor = false;
             this.BTN_Archive.Click += new System.EventHandler(this.BTN_Archive_Click);
             // 
-            // textBox9
+            // TXT_SearchKEys
             // 
-            this.textBox9.Location = new System.Drawing.Point(455, 313);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(253, 107);
-            this.textBox9.TabIndex = 13;
+            this.TXT_SearchKEys.Location = new System.Drawing.Point(455, 313);
+            this.TXT_SearchKEys.Multiline = true;
+            this.TXT_SearchKEys.Name = "TXT_SearchKEys";
+            this.TXT_SearchKEys.Size = new System.Drawing.Size(253, 107);
+            this.TXT_SearchKEys.TabIndex = 13;
             // 
-            // textBox1
+            // TXT_bookNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(484, 9);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(136, 26);
-            this.textBox1.TabIndex = 1;
+            this.TXT_bookNumber.Location = new System.Drawing.Point(484, 9);
+            this.TXT_bookNumber.Multiline = true;
+            this.TXT_bookNumber.Name = "TXT_bookNumber";
+            this.TXT_bookNumber.Size = new System.Drawing.Size(136, 26);
+            this.TXT_bookNumber.TabIndex = 1;
             // 
             // label7
             // 
@@ -623,13 +640,13 @@
             this.label9.TabIndex = 138;
             this.label9.Text = "رقم واردنا";
             // 
-            // textBox12
+            // TXT_notes
             // 
-            this.textBox12.Location = new System.Drawing.Point(73, 137);
-            this.textBox12.Multiline = true;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(268, 67);
-            this.textBox12.TabIndex = 12;
+            this.TXT_notes.Location = new System.Drawing.Point(73, 137);
+            this.TXT_notes.Multiline = true;
+            this.TXT_notes.Name = "TXT_notes";
+            this.TXT_notes.Size = new System.Drawing.Size(268, 67);
+            this.TXT_notes.TabIndex = 12;
             // 
             // label10
             // 
@@ -686,13 +703,13 @@
             this.label13.TabIndex = 142;
             this.label13.Text = "من";
             // 
-            // textBox7
+            // TXT_To
             // 
-            this.textBox7.Location = new System.Drawing.Point(73, 88);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(268, 26);
-            this.textBox7.TabIndex = 7;
+            this.TXT_To.Location = new System.Drawing.Point(73, 88);
+            this.TXT_To.Multiline = true;
+            this.TXT_To.Name = "TXT_To";
+            this.TXT_To.Size = new System.Drawing.Size(268, 26);
+            this.TXT_To.TabIndex = 7;
             // 
             // label14
             // 
@@ -705,13 +722,13 @@
             this.label14.TabIndex = 143;
             this.label14.Text = "الى";
             // 
-            // textBox6
+            // TXT_From
             // 
-            this.textBox6.Location = new System.Drawing.Point(73, 50);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(268, 26);
-            this.textBox6.TabIndex = 6;
+            this.TXT_From.Location = new System.Drawing.Point(73, 50);
+            this.TXT_From.Multiline = true;
+            this.TXT_From.Name = "TXT_From";
+            this.TXT_From.Size = new System.Drawing.Size(268, 26);
+            this.TXT_From.TabIndex = 6;
             // 
             // label15
             // 
@@ -723,13 +740,13 @@
             this.label15.TabIndex = 144;
             this.label15.Text = "مفاتيح البحث";
             // 
-            // textBox5
+            // TXT_Subject
             // 
-            this.textBox5.Location = new System.Drawing.Point(73, 10);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(268, 26);
-            this.textBox5.TabIndex = 5;
+            this.TXT_Subject.Location = new System.Drawing.Point(73, 10);
+            this.TXT_Subject.Multiline = true;
+            this.TXT_Subject.Name = "TXT_Subject";
+            this.TXT_Subject.Size = new System.Drawing.Size(268, 26);
+            this.TXT_Subject.TabIndex = 5;
             // 
             // label17
             // 
@@ -752,13 +769,13 @@
             this.label18.TabIndex = 147;
             this.label18.Text = "ملاحضات";
             // 
-            // textBox3
+            // TXT_Book_recive_number
             // 
-            this.textBox3.Location = new System.Drawing.Point(484, 86);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(136, 26);
-            this.textBox3.TabIndex = 3;
+            this.TXT_Book_recive_number.Location = new System.Drawing.Point(484, 86);
+            this.TXT_Book_recive_number.Multiline = true;
+            this.TXT_Book_recive_number.Name = "TXT_Book_recive_number";
+            this.TXT_Book_recive_number.Size = new System.Drawing.Size(136, 26);
+            this.TXT_Book_recive_number.TabIndex = 3;
             // 
             // panel10
             // 
@@ -959,6 +976,8 @@
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BackgroundImage = global::ArchiveSystem.Properties.Resources.page_header_web_banner_header_e57b9dba7aad383d17c45d66d35b3bf0;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel5.Controls.Add(this.LBL_department);
+            this.panel5.Controls.Add(this.LBL_USERNAME);
             this.panel5.Controls.Add(this.Scanning_Folder);
             this.panel5.Controls.Add(this.panel29);
             this.panel5.Controls.Add(this.LBL_ARCHIVEtitle);
@@ -1028,6 +1047,24 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // LBL_USERNAME
+            // 
+            this.LBL_USERNAME.AutoSize = true;
+            this.LBL_USERNAME.Location = new System.Drawing.Point(860, 78);
+            this.LBL_USERNAME.Name = "LBL_USERNAME";
+            this.LBL_USERNAME.Size = new System.Drawing.Size(38, 14);
+            this.LBL_USERNAME.TabIndex = 167;
+            this.LBL_USERNAME.Text = "label2";
+            // 
+            // LBL_department
+            // 
+            this.LBL_department.AutoSize = true;
+            this.LBL_department.Location = new System.Drawing.Point(860, 103);
+            this.LBL_department.Name = "LBL_department";
+            this.LBL_department.Size = new System.Drawing.Size(38, 14);
+            this.LBL_department.TabIndex = 168;
+            this.LBL_department.Text = "label3";
             // 
             // Form1
             // 
@@ -1107,28 +1144,28 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox COMLIST_assination;
         private System.Windows.Forms.Button BTN_Archive;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TXT_SearchKEys;
+        private System.Windows.Forms.TextBox TXT_bookNumber;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox TXT_notes;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox TXT_To;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TXT_From;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TXT_Subject;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TXT_Book_recive_number;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel16;
@@ -1154,12 +1191,14 @@
         private System.Windows.Forms.Button button6;
  
         private System.Windows.Forms.Button btn_view_data_dqv;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox COM_priority;
+        private System.Windows.Forms.ComboBox COM_privicy;
+        private System.Windows.Forms.ComboBox COM_PaperType;
+        private System.Windows.Forms.ComboBox COM_bookType;
+        private System.Windows.Forms.DateTimePicker DT_bookRecive_date;
+        private System.Windows.Forms.DateTimePicker DT_bookDate;
+        private System.Windows.Forms.Label LBL_department;
+        private System.Windows.Forms.Label LBL_USERNAME;
     }
 }
 

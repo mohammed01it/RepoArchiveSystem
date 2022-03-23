@@ -64,9 +64,52 @@ namespace ArchiveSystem
                 MessageBox.Show(ex.ToString());
             }
         }
-        
+        void Fill_bookType()
+        {
+            try
+            {
+                string query = string.Format(@" SELECT   [BooksTypeID]
+      ,[BookTypeName]
+  FROM [ArchiveSystem].[dbo].[BooksType_TBL]", con);
+
+
+
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable booktypes = new DataTable();
+
+                adp.Fill(booktypes);
+                COM_bookType.DataSource = booktypes;
+                COM_bookType.DisplayMember = "BookTypeName";
+                COM_bookType.ValueMember = "BooksTypeID";
+                 
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            //--------------moh------------------
+            Doc_source = Properties.Settings.Default.DOC_Source.ToString(); // doc source
+            metroTabControl1.RightToLeft = RightToLeft.Yes;
+            metroTabControl1.RightToLeftLayout = true;
+
+            Refresh_Folders();
+            Fill_bookType();
+            //--------------end------------------
+
+
             //--------------shukri-----------------------
             Form_view_data_dqv new_tab = new Form_view_data_dqv();
             TabPage t = new TabPage();
@@ -82,34 +125,7 @@ namespace ArchiveSystem
 
 
 
-            Doc_source = Properties.Settings.Default.DOC_Source.ToString(); // doc source
-
-
-            metroTabControl1.RightToLeft = RightToLeft.Yes;
-            metroTabControl1.RightToLeftLayout = true;
-
-            //example
-            //          string query = string.Format(@" SELECT TOP (1000) [PermitionTypeID]
-            //    ,[PermitionType]
-            //FROM [ArchiveSystem].[dbo].[PermitionType_TBL];", con);
-
-
-
-
-            //          con.Open();
-            //          SqlCommand cmd = new SqlCommand(query, con);
-
-            //          SqlDataAdapter adp = new SqlDataAdapter(cmd);
-
-            //          DataTable dt2 = new DataTable();
-
-            //          adp.Fill(dt2);
-            //          con.Close();
-
-
-
-            Refresh_Folders();
-             
+       
 
         }
 
@@ -169,6 +185,69 @@ namespace ArchiveSystem
 
         private void BTN_Archive_Click(object sender, EventArgs e)
         {
+//            Random rand = new Random();
+
+         
+//            string subject = TXT_Subject.Text;
+//            int ran = rand.Next(100000, 999999);
+
+//          string datenow=  DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+
+//            string book_code = TXT_Subject.Text + ran.ToString() + datenow;
+
+//            string query = string.Format(@"INSERT INTO [dbo].[ArchiveBooks_TBL]
+//           ([BookCode]
+//           ,[BookNumber]
+//           ,[BookDate]
+//           ,[InboundNumber]
+//           ,[InboundDate]
+//           ,[Subject]
+//           ,[BooksTypeID]
+//           ,[From]
+//           ,[To]
+//           ,[SearchKeysID]
+//           ,[BookPriority]
+//           ,[ArchivedDate]
+//           ,[BookPaperType]
+//           ,[Notes]
+//           ,[DepartmentID_archivedBy]
+//           ,[UserID_archivedBy]
+//           ,[BookStatus]
+//           ,[Privacy])
+//     VALUES
+//           ('{0}',{1},'{2}','{3}','{4}','{5}',{6},'{7}','{8}',{9},'{10}','{11}','{12}','{13}',{14},{15},'{16}',{17})
+//", book_code,TXT_bookNumber,DT_bookDate,TXT_Book_recive_number,DT_bookRecive_date,TXT_Subject,COM_bookType,TXT_From,TXT_To,TXT_SearchKEys,COM_priority, datenow,COM_PaperType,TXT_notes, con);
+
+
+
+
+//            con.Open();
+//            SqlCommand cmd = new SqlCommand(query, con);
+
+//            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+//            DataTable dt2 = new DataTable();
+
+//            adp.Fill(dt2);
+//            con.Close();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             //get list of checked rows 
             List<string> files_checked = new List<string>();
             for (int i = 0; i < DGV_Files.Rows.Count; i++)
@@ -281,10 +360,7 @@ namespace ArchiveSystem
             sd.Show();
         }
 
-        private void panel14_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
 
         private void PicB_displayBOOK_Click(object sender, EventArgs e)
         {
@@ -294,10 +370,7 @@ namespace ArchiveSystem
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void BTN_addfolder_Click(object sender, EventArgs e)
         {
@@ -330,5 +403,7 @@ namespace ArchiveSystem
             this.Form1_Load(null, null);
 
         }
+
+       
     }
 }

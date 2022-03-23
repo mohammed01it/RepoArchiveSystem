@@ -37,6 +37,7 @@
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.PicB_displayBOOK = new System.Windows.Forms.PictureBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.CHK_selectall = new System.Windows.Forms.CheckBox();
@@ -92,6 +93,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
@@ -99,19 +101,19 @@
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.Folder_Brows_DOC_Source = new System.Windows.Forms.FolderBrowserDialog();
-            this.PicB_displayBOOK = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel29 = new System.Windows.Forms.Panel();
             this.LBL_ARCHIVEtitle = new System.Windows.Forms.Label();
             this.lbl_loginDepartment = new System.Windows.Forms.Label();
             this.lbl_LoginUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_view_data_dqv = new System.Windows.Forms.Button();
             this.panel7.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicB_displayBOOK)).BeginInit();
             this.panel13.SuspendLayout();
             this.panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Files)).BeginInit();
@@ -123,10 +125,9 @@
             this.panel15.SuspendLayout();
             this.panel12.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicB_displayBOOK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -239,6 +240,18 @@
             this.panel14.Size = new System.Drawing.Size(378, 636);
             this.panel14.TabIndex = 5;
             this.panel14.Paint += new System.Windows.Forms.PaintEventHandler(this.panel14_Paint);
+            // 
+            // PicB_displayBOOK
+            // 
+            this.PicB_displayBOOK.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PicB_displayBOOK.Location = new System.Drawing.Point(0, 0);
+            this.PicB_displayBOOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PicB_displayBOOK.Name = "PicB_displayBOOK";
+            this.PicB_displayBOOK.Size = new System.Drawing.Size(378, 636);
+            this.PicB_displayBOOK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PicB_displayBOOK.TabIndex = 0;
+            this.PicB_displayBOOK.TabStop = false;
+            this.PicB_displayBOOK.Click += new System.EventHandler(this.PicB_displayBOOK_Click);
             // 
             // panel13
             // 
@@ -623,7 +636,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(65, 27);
             this.label16.TabIndex = 145;
-            this.label16.Text = "الاولوبة";
+            this.label16.Text = "الاولوية";
             // 
             // label9
             // 
@@ -870,6 +883,18 @@
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 12;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(-4, 37);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 26;
+            this.dataGridView1.Size = new System.Drawing.Size(1480, 620);
+            this.dataGridView1.TabIndex = 2;
+            // 
             // metroTabPage3
             // 
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
@@ -964,18 +989,6 @@
             // 
             this.Folder_Brows_DOC_Source.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
             // 
-            // PicB_displayBOOK
-            // 
-            this.PicB_displayBOOK.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PicB_displayBOOK.Location = new System.Drawing.Point(0, 0);
-            this.PicB_displayBOOK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PicB_displayBOOK.Name = "PicB_displayBOOK";
-            this.PicB_displayBOOK.Size = new System.Drawing.Size(378, 636);
-            this.PicB_displayBOOK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PicB_displayBOOK.TabIndex = 0;
-            this.PicB_displayBOOK.TabStop = false;
-            this.PicB_displayBOOK.Click += new System.EventHandler(this.PicB_displayBOOK_Click);
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
@@ -1053,23 +1066,22 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // dataGridView1
+            // btn_view_data_dqv
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-4, 37);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 26;
-            this.dataGridView1.Size = new System.Drawing.Size(1480, 620);
-            this.dataGridView1.TabIndex = 2;
+            this.btn_view_data_dqv.Location = new System.Drawing.Point(1347, 7);
+            this.btn_view_data_dqv.Name = "btn_view_data_dqv";
+            this.btn_view_data_dqv.Size = new System.Drawing.Size(205, 35);
+            this.btn_view_data_dqv.TabIndex = 7;
+            this.btn_view_data_dqv.Text = "الارشيف العام";
+            this.btn_view_data_dqv.UseVisualStyleBackColor = true;
+            this.btn_view_data_dqv.Click += new System.EventHandler(this.btn_view_data_dqv_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1581, 970);
+            this.Controls.Add(this.btn_view_data_dqv);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -1089,6 +1101,7 @@
             this.metroTabPage1.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PicB_displayBOOK)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
@@ -1104,11 +1117,10 @@
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.metroTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PicB_displayBOOK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1194,6 +1206,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.FolderBrowserDialog Folder_Brows_DOC_Source;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btn_view_data_dqv;
     }
 }
 

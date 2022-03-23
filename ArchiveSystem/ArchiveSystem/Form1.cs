@@ -15,6 +15,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Management;
 using System.Data.SqlClient;
+using ArchiveSystem.Folder_view_data;
 
 namespace ArchiveSystem
 {
@@ -23,29 +24,7 @@ namespace ArchiveSystem
     {
 
        
-           void fill_dgv_view_data_employes()
-           {
-            DataTable dt = new DataTable();
-            SqlDataAdapter adapter;
-
-
-            adapter = new SqlDataAdapter(@"SELECT
-
-dbo.ArchiveBooks_TBL.ArchiveBookID as [الصورة الشخصية],
-dbo.ArchiveBooks_TBL.BookCode as [رقم الموظف],
-dbo.ArchiveBooks_TBL.BookDate as [حالة الايقاف]
-FROM     ArchiveBooks_TBL
-                ", con);
-
-
-
-            dt.Clear();
-
-            adapter.Fill(dt);
-            dataGridView1.DataSource = dt;
-
-        }
-
+         
 
 
         public Form1()
@@ -73,7 +52,7 @@ FROM     ArchiveBooks_TBL
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            fill_dgv_view_data_employes();
+          
 
               Doc_source = Properties.Settings.Default.DOC_Source.ToString(); // doc source
             
@@ -365,6 +344,20 @@ FROM     ArchiveBooks_TBL
         private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
         {
 
+        }
+
+        public void btn_view_data_dqv_Click(object sender, EventArgs e)
+        {
+            Form_view_data_dqv new_tab = new Form_view_data_dqv();
+            TabPage t = new TabPage();
+            new_tab.TopLevel = false;
+            t.Controls.Add(new_tab);
+            metroTabControl1.TabPages.Add(t);
+            new_tab.Show();
+            new_tab.Dock = DockStyle.Fill;
+            int x = metroTabControl1.TabCount;
+            t.Text = "الارشيف العام" + x;
+            metroTabControl1.SelectTab(x - 1);
         }
     }
 }

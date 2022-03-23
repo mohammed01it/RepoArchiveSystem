@@ -60,6 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
+    <Compile Include="Folder_view_data\Form_view_data_dqv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Folder_view_data\Form_view_data_dqv.Designer.cs">
+      <DependentUpon>Form_view_data_dqv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </Compile>
     <Compile Include="USBRead.cs" />
     <Compile Include="WIAScanner.cs" />
+    <EmbeddedResource Include="Folder_view_data\Form_view_data_dqv.resx">
+      <DependentUpon>Form_view_data_dqv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

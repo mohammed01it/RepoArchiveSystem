@@ -96,10 +96,39 @@ namespace ArchiveSystem
                 MessageBox.Show(ex.ToString());
             }
         }
+       void callLogin_info()
+        {
+            LBL_USERNAME.Text = Login._user;
 
+            //bring dep name from id 
+           string depid = Login._depID;
+
+            string query = string.Format(@" SELECT  [DepartmentID]
+      ,[DepartmentName]
+  FROM [ArchiveSystem].[dbo].[Departments_TBL] where DepartmentID={0}", depid, con);
+  
+            con.Open();
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            adp.Fill(dt);
+            if(dt.Rows.Count > 0)
+            {
+                string DepName = dt.Rows[0]["DepartmentName"].ToString();
+                //put dep name in lable 
+                LBL_department.Text = DepName;
+            }
+            con.Close();
+
+
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+       
+            
             //--------------moh------------------
             Doc_source = Properties.Settings.Default.DOC_Source.ToString(); // doc source
             metroTabControl1.RightToLeft = RightToLeft.Yes;
@@ -107,6 +136,7 @@ namespace ArchiveSystem
 
             Refresh_Folders();
             Fill_bookType();
+            callLogin_info();
             //--------------end------------------
 
 
@@ -181,73 +211,71 @@ namespace ArchiveSystem
 
         }
 
-       
+
 
         private void BTN_Archive_Click(object sender, EventArgs e)
         {
-//            Random rand = new Random();
+            Random rand = new Random();
+
+
+            string subject = TXT_Subject.Text;
+            int ran = rand.Next(100000, 999999);
+
+            string datenow = DateTime.Now.ToString("hhmmss");
+
+            string book_code = TXT_Subject.Text + ran.ToString() + datenow;
+            string departmentID = Login._depID;
+            string userid = Login._userID;
+            
+            
+            string query = string.Format(@"INSERT INTO [dbo].[ArchiveBooks_TBL]
+           ([BookCode]
+           ,[BookNumber]
+           ,[BookDate]
+           ,[InboundNumber]
+           ,[InboundDate]
+           ,[Subject]
+
+           ,[BooksTypeID]
+           ,[From]
+           ,[To]
+           
+           ,[BookPriority]
+           ,[ArchivedDate]
+           ,[BookPaperType]
+           ,[Notes]
+           ,[DepartmentID_archivedBy]
+           ,[UserID_archivedBy]
+           ,[BookStatus]
+           ,[Privacy]
+           ,[SearchKeys]
+            ) output INSERTED.ArchiveBookID
+     VALUES
+           (N'{0}','{1}','{2}','{3}','{4}',N'{5}',{6},N'{7}',N'{8}',N'{9}','{10}',N'{11}',N'{12}',{13},{14},N'{15}',N'{16}',N'{17}')
+", book_code, TXT_bookNumber.Text, DT_bookDate.Text, TXT_Book_recive_number.Text, DT_bookRecive_date.Text, TXT_Subject.Text, COM_bookType.SelectedValue, TXT_From.Text, TXT_To.Text, COM_priority.Text, datenow, COM_PaperType.Text, TXT_notes.Text, departmentID, userid,COM_bookStatus.Text, COM_privicy.Text, TXT_SearchKEys.Text ,con);
+
+
 
          
-//            string subject = TXT_Subject.Text;
-//            int ran = rand.Next(100000, 999999);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(query, con);
+            int Book_id = (int)cmd.ExecuteScalar();
 
-//          string datenow=  DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
-
-//            string book_code = TXT_Subject.Text + ran.ToString() + datenow;
-
-//            string query = string.Format(@"INSERT INTO [dbo].[ArchiveBooks_TBL]
-//           ([BookCode]
-//           ,[BookNumber]
-//           ,[BookDate]
-//           ,[InboundNumber]
-//           ,[InboundDate]
-//           ,[Subject]
-//           ,[BooksTypeID]
-//           ,[From]
-//           ,[To]
-//           ,[SearchKeysID]
-//           ,[BookPriority]
-//           ,[ArchivedDate]
-//           ,[BookPaperType]
-//           ,[Notes]
-//           ,[DepartmentID_archivedBy]
-//           ,[UserID_archivedBy]
-//           ,[BookStatus]
-//           ,[Privacy])
-//     VALUES
-//           ('{0}',{1},'{2}','{3}','{4}','{5}',{6},'{7}','{8}',{9},'{10}','{11}','{12}','{13}',{14},{15},'{16}',{17})
-//", book_code,TXT_bookNumber,DT_bookDate,TXT_Book_recive_number,DT_bookRecive_date,TXT_Subject,COM_bookType,TXT_From,TXT_To,TXT_SearchKEys,COM_priority, datenow,COM_PaperType,TXT_notes, con);
+            
+            if (Book_id != 0)
+            {
+                // for loop on list of dep and make query to insert in assign table 
 
 
+            }
+            //SqlDataAdapter adp = new SqlDataAdapter(cmd);
 
+            //DataTable dt2 = new DataTable();
 
-//            con.Open();
-//            SqlCommand cmd = new SqlCommand(query, con);
+            //adp.Fill(dt2);
+            con.Close();
 
-//            SqlDataAdapter adp = new SqlDataAdapter(cmd);
-
-//            DataTable dt2 = new DataTable();
-
-//            adp.Fill(dt2);
-//            con.Close();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+             
             //get list of checked rows 
             List<string> files_checked = new List<string>();
             for (int i = 0; i < DGV_Files.Rows.Count; i++)
@@ -263,12 +291,12 @@ namespace ArchiveSystem
             }
 
             //create folder with same db index id
-            var Typee = "وارد";// bring it from dropdown user chose
+            var Typee = COM_bookType.SelectedText;// bring it from dropdown user chose
             //var BookCat = "كتاب عادي";// bring it from dropdown user chose
-            var Code = "cjs2"; //bring it from db
+          
 
 
-            WebRequest request_ = WebRequest.Create(FTP_ip + Typee + "/" + Code + "/");
+            WebRequest request_ = WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/");
             request_.Method = WebRequestMethods.Ftp.MakeDirectory;
             request_.Credentials = new NetworkCredential(FTP_user, FTP_pass);
             using (var resp = (FtpWebResponse)request_.GetResponse())
@@ -297,7 +325,7 @@ namespace ArchiveSystem
                     //if file == selected files from app
                     if (file_name == filenamechecked)
                     {
-                        FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + Code + "/" + file_name);
+                        FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/" + file_name);
                         request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
                         request.Method = WebRequestMethods.Ftp.UploadFile;
 
@@ -404,6 +432,9 @@ namespace ArchiveSystem
 
         }
 
-       
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

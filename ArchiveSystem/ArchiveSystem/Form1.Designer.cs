@@ -102,13 +102,15 @@
             this.button3 = new System.Windows.Forms.Button();
             this.Folder_Brows_DOC_Source = new System.Windows.Forms.FolderBrowserDialog();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.LBL_department = new System.Windows.Forms.Label();
+            this.LBL_USERNAME = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
             this.LBL_ARCHIVEtitle = new System.Windows.Forms.Label();
             this.lbl_loginDepartment = new System.Windows.Forms.Label();
             this.lbl_LoginUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.LBL_USERNAME = new System.Windows.Forms.Label();
-            this.LBL_department = new System.Windows.Forms.Label();
+            this.COM_bookStatus = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -154,6 +156,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1045, 10);
             this.panel3.TabIndex = 2;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel4
             // 
@@ -435,6 +438,8 @@
             // 
             this.panel12.AutoScroll = true;
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel12.Controls.Add(this.COM_bookStatus);
+            this.panel12.Controls.Add(this.label2);
             this.panel12.Controls.Add(this.COM_priority);
             this.panel12.Controls.Add(this.COM_privicy);
             this.panel12.Controls.Add(this.COM_PaperType);
@@ -582,7 +587,7 @@
             // 
             // TXT_SearchKEys
             // 
-            this.TXT_SearchKEys.Location = new System.Drawing.Point(455, 313);
+            this.TXT_SearchKEys.Location = new System.Drawing.Point(455, 333);
             this.TXT_SearchKEys.Multiline = true;
             this.TXT_SearchKEys.Name = "TXT_SearchKEys";
             this.TXT_SearchKEys.Size = new System.Drawing.Size(253, 107);
@@ -734,7 +739,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(623, 289);
+            this.label15.Location = new System.Drawing.Point(623, 309);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(89, 21);
             this.label15.TabIndex = 144;
@@ -991,6 +996,26 @@
             this.panel5.Size = new System.Drawing.Size(1045, 128);
             this.panel5.TabIndex = 4;
             // 
+            // LBL_department
+            // 
+            this.LBL_department.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LBL_department.AutoSize = true;
+            this.LBL_department.Location = new System.Drawing.Point(851, 103);
+            this.LBL_department.Name = "LBL_department";
+            this.LBL_department.Size = new System.Drawing.Size(38, 14);
+            this.LBL_department.TabIndex = 168;
+            this.LBL_department.Text = "label3";
+            // 
+            // LBL_USERNAME
+            // 
+            this.LBL_USERNAME.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LBL_USERNAME.AutoSize = true;
+            this.LBL_USERNAME.Location = new System.Drawing.Point(851, 78);
+            this.LBL_USERNAME.Name = "LBL_USERNAME";
+            this.LBL_USERNAME.Size = new System.Drawing.Size(38, 14);
+            this.LBL_USERNAME.TabIndex = 167;
+            this.LBL_USERNAME.Text = "label2";
+            // 
             // panel29
             // 
             this.panel29.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1048,23 +1073,28 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // LBL_USERNAME
+            // COM_bookStatus
             // 
-            this.LBL_USERNAME.AutoSize = true;
-            this.LBL_USERNAME.Location = new System.Drawing.Point(860, 78);
-            this.LBL_USERNAME.Name = "LBL_USERNAME";
-            this.LBL_USERNAME.Size = new System.Drawing.Size(38, 14);
-            this.LBL_USERNAME.TabIndex = 167;
-            this.LBL_USERNAME.Text = "label2";
+            this.COM_bookStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.COM_bookStatus.FormattingEnabled = true;
+            this.COM_bookStatus.Items.AddRange(new object[] {
+            "منتهي",
+            "قيد المتابعة"});
+            this.COM_bookStatus.Location = new System.Drawing.Point(484, 284);
+            this.COM_bookStatus.Name = "COM_bookStatus";
+            this.COM_bookStatus.Size = new System.Drawing.Size(136, 21);
+            this.COM_bookStatus.TabIndex = 166;
             // 
-            // LBL_department
+            // label2
             // 
-            this.LBL_department.AutoSize = true;
-            this.LBL_department.Location = new System.Drawing.Point(860, 103);
-            this.LBL_department.Name = "LBL_department";
-            this.LBL_department.Size = new System.Drawing.Size(38, 14);
-            this.LBL_department.TabIndex = 168;
-            this.LBL_department.Text = "label3";
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(635, 284);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 21);
+            this.label2.TabIndex = 167;
+            this.label2.Text = "حالة الكتاب";
             // 
             // Form1
             // 
@@ -1199,6 +1229,8 @@
         private System.Windows.Forms.DateTimePicker DT_bookDate;
         private System.Windows.Forms.Label LBL_department;
         private System.Windows.Forms.Label LBL_USERNAME;
+        private System.Windows.Forms.ComboBox COM_bookStatus;
+        private System.Windows.Forms.Label label2;
     }
 }
 

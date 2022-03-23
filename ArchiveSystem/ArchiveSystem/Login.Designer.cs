@@ -35,12 +35,12 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TXT_pass = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.TXT_User = new System.Windows.Forms.TextBox();
+            this.BTN_Login = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel5.SuspendLayout();
@@ -100,12 +100,12 @@
             // panel8
             // 
             this.panel8.Controls.Add(this.label3);
-            this.panel8.Controls.Add(this.textBox2);
+            this.panel8.Controls.Add(this.TXT_pass);
             this.panel8.Controls.Add(this.pictureBox1);
             this.panel8.Controls.Add(this.label2);
             this.panel8.Controls.Add(this.label1);
-            this.panel8.Controls.Add(this.textBox1);
-            this.panel8.Controls.Add(this.button1);
+            this.panel8.Controls.Add(this.TXT_User);
+            this.panel8.Controls.Add(this.BTN_Login);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 78);
             this.panel8.Name = "panel8";
@@ -124,14 +124,17 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "ارشيف مديرية الهندسة العسكرية";
             // 
-            // textBox2
+            // TXT_pass
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(368, 120);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(271, 33);
-            this.textBox2.TabIndex = 11;
+            this.TXT_pass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_pass.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXT_pass.Location = new System.Drawing.Point(368, 120);
+            this.TXT_pass.Multiline = true;
+            this.TXT_pass.Name = "TXT_pass";
+            this.TXT_pass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TXT_pass.Size = new System.Drawing.Size(271, 33);
+            this.TXT_pass.TabIndex = 11;
+            this.TXT_pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox1
             // 
@@ -167,25 +170,30 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "اسم المستخدم";
             // 
-            // textBox1
+            // TXT_User
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(366, 52);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(273, 33);
-            this.textBox1.TabIndex = 10;
+            this.TXT_User.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_User.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TXT_User.Location = new System.Drawing.Point(366, 52);
+            this.TXT_User.Multiline = true;
+            this.TXT_User.Name = "TXT_User";
+            this.TXT_User.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TXT_User.Size = new System.Drawing.Size(273, 33);
+            this.TXT_User.TabIndex = 10;
+            this.TXT_User.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button1
+            // BTN_Login
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(524, 177);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 38);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "تسجيل الدخول";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BTN_Login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTN_Login.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_Login.Location = new System.Drawing.Point(524, 177);
+            this.BTN_Login.Name = "BTN_Login";
+            this.BTN_Login.Size = new System.Drawing.Size(115, 38);
+            this.BTN_Login.TabIndex = 14;
+            this.BTN_Login.Text = "تسجيل الدخول";
+            this.BTN_Login.UseVisualStyleBackColor = true;
+            this.BTN_Login.Click += new System.EventHandler(this.BTN_Login_Click);
+            this.BTN_Login.Enter += new System.EventHandler(this.BTN_Login_Click);
             // 
             // panel6
             // 
@@ -236,11 +244,11 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BTN_Login;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TXT_pass;
+        private System.Windows.Forms.TextBox TXT_User;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel6;

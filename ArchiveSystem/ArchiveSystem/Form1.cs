@@ -359,5 +359,17 @@ namespace ArchiveSystem
             t.Text = "الارشيف العام" + x;
             metroTabControl1.SelectTab(x - 1);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //dawdawdawd
+            //    aw
+            //    d
+            //    wad
+            //    aw
+            //    d
+            //    aw
+            //    dawd
+        }
     }
 }

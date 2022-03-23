@@ -54,6 +54,7 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -109,7 +110,7 @@
             this.lbl_LoginUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_view_data_dqv = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel7.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -437,6 +438,7 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel12.Controls.Add(this.button5);
             this.panel12.Controls.Add(this.button4);
             this.panel12.Controls.Add(this.button3);
             this.panel12.Controls.Add(this.button2);
@@ -478,6 +480,16 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(723, 360);
             this.panel12.TabIndex = 3;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(34, 97);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 168;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -1036,15 +1048,14 @@
             this.btn_view_data_dqv.UseVisualStyleBackColor = true;
             this.btn_view_data_dqv.Click += new System.EventHandler(this.btn_view_data_dqv_Click);
             // 
-            // button4
+            // button5
             // 
-            this.button4.Location = new System.Drawing.Point(34, 97);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 168;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button5.Location = new System.Drawing.Point(34, 130);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 169;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1178,6 +1189,7 @@
         private System.Windows.Forms.Button btn_view_data_dqv;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 

@@ -54,10 +54,13 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+=======
+>>>>>>> 57e1d7671f0aa0f35852745fe95c98d160c64f60
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
@@ -111,6 +114,10 @@
             this.lbl_loginDepartment = new System.Windows.Forms.Label();
             this.lbl_LoginUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+<<<<<<< HEAD
+=======
+            this.btn_view_data_dqv = new System.Windows.Forms.Button();
+>>>>>>> 57e1d7671f0aa0f35852745fe95c98d160c64f60
             this.panel7.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -462,10 +469,6 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel12.Controls.Add(this.button6);
-            this.panel12.Controls.Add(this.button5);
-            this.panel12.Controls.Add(this.button4);
-            this.panel12.Controls.Add(this.button3);
             this.panel12.Controls.Add(this.button2);
             this.panel12.Controls.Add(this.label5);
             this.panel12.Controls.Add(this.checkedListBox1);
@@ -507,6 +510,7 @@
             this.panel12.Size = new System.Drawing.Size(843, 454);
             this.panel12.TabIndex = 3;
             // 
+<<<<<<< HEAD
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(40, 204);
@@ -549,6 +553,8 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+=======
+>>>>>>> 57e1d7671f0aa0f35852745fe95c98d160c64f60
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(40, 43);
@@ -1116,6 +1122,20 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+<<<<<<< HEAD
+=======
+            // btn_view_data_dqv
+            // 
+            this.btn_view_data_dqv.Location = new System.Drawing.Point(1155, 6);
+            this.btn_view_data_dqv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_view_data_dqv.Name = "btn_view_data_dqv";
+            this.btn_view_data_dqv.Size = new System.Drawing.Size(176, 28);
+            this.btn_view_data_dqv.TabIndex = 7;
+            this.btn_view_data_dqv.Text = "الارشيف العام";
+            this.btn_view_data_dqv.UseVisualStyleBackColor = true;
+            this.btn_view_data_dqv.Click += new System.EventHandler(this.btn_view_data_dqv_Click);
+            // 
+>>>>>>> 57e1d7671f0aa0f35852745fe95c98d160c64f60
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -1245,10 +1265,14 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.FolderBrowserDialog Folder_Brows_DOC_Source;
         private System.Windows.Forms.DataGridView dataGridView1;
+<<<<<<< HEAD
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+=======
+        private System.Windows.Forms.Button btn_view_data_dqv;
+>>>>>>> 57e1d7671f0aa0f35852745fe95c98d160c64f60
     }
 }
 

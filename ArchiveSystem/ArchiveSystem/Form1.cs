@@ -52,9 +52,22 @@ namespace ArchiveSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-          
+            //--------------shukri-----------------------
+            Form_view_data_dqv new_tab = new Form_view_data_dqv();
+            TabPage t = new TabPage();
+            new_tab.TopLevel = false;
+            t.Controls.Add(new_tab);
+            metroTabControl1.TabPages.Add(t);
+            new_tab.Show();
+            new_tab.Dock = DockStyle.Fill;
+            int x = metroTabControl1.TabCount;
+            t.Text = "الارشيف العام" + x;
+            //metroTabControl1.SelectTab(x - 1);
+            //---------------end-----------------
 
-              Doc_source = Properties.Settings.Default.DOC_Source.ToString(); // doc source
+
+
+            Doc_source = Properties.Settings.Default.DOC_Source.ToString(); // doc source
             
              
             metroTabControl1.RightToLeft = RightToLeft.Yes;
@@ -348,16 +361,7 @@ namespace ArchiveSystem
 
         public void btn_view_data_dqv_Click(object sender, EventArgs e)
         {
-            Form_view_data_dqv new_tab = new Form_view_data_dqv();
-            TabPage t = new TabPage();
-            new_tab.TopLevel = false;
-            t.Controls.Add(new_tab);
-            metroTabControl1.TabPages.Add(t);
-            new_tab.Show();
-            new_tab.Dock = DockStyle.Fill;
-            int x = metroTabControl1.TabCount;
-            t.Text = "الارشيف العام" + x;
-            metroTabControl1.SelectTab(x - 1);
+           
         }
 
         private void button3_Click(object sender, EventArgs e)

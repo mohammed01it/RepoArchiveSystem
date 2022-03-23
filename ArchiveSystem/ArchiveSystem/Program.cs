@@ -23,7 +23,7 @@ namespace ArchiveSystem
             main_instance = new ScanDialog();
 
 
-            Application.Run(new Form1());
+            Application.Run(new Login());
 
             // main_instance = new Main();
             //Application.Run(main_instance);

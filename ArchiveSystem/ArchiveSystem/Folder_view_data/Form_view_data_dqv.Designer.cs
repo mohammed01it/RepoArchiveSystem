@@ -69,12 +69,12 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_view_data_doc.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_view_data_doc.EnableHeadersVisualStyles = false;
-            this.dgv_view_data_doc.Location = new System.Drawing.Point(2, 41);
+            this.dgv_view_data_doc.Location = new System.Drawing.Point(2, 50);
             this.dgv_view_data_doc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_view_data_doc.Name = "dgv_view_data_doc";
             this.dgv_view_data_doc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgv_view_data_doc.RowTemplate.Height = 26;
-            this.dgv_view_data_doc.Size = new System.Drawing.Size(1337, 705);
+            this.dgv_view_data_doc.Size = new System.Drawing.Size(1498, 898);
             this.dgv_view_data_doc.TabIndex = 3;
             this.dgv_view_data_doc.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_view_data_doc_ColumnHeaderMouseClick);
             // 
@@ -82,11 +82,11 @@
             // 
             this.txt_seach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_seach.Font = new System.Drawing.Font("Tahoma", 10.2F);
-            this.txt_seach.Location = new System.Drawing.Point(1025, 7);
+            this.txt_seach.Location = new System.Drawing.Point(1144, 9);
             this.txt_seach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_seach.Multiline = true;
             this.txt_seach.Name = "txt_seach";
-            this.txt_seach.Size = new System.Drawing.Size(290, 30);
+            this.txt_seach.Size = new System.Drawing.Size(338, 36);
             this.txt_seach.TabIndex = 4;
             this.txt_seach.TextChanged += new System.EventHandler(this.txt_seach_TextChanged);
             // 
@@ -100,10 +100,10 @@
             this.btn_search_claer.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btn_search_claer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_search_claer.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.btn_search_claer.Location = new System.Drawing.Point(1026, 8);
+            this.btn_search_claer.Location = new System.Drawing.Point(1145, 10);
             this.btn_search_claer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_search_claer.Name = "btn_search_claer";
-            this.btn_search_claer.Size = new System.Drawing.Size(30, 28);
+            this.btn_search_claer.Size = new System.Drawing.Size(35, 34);
             this.btn_search_claer.TabIndex = 399;
             this.btn_search_claer.Text = "x";
             this.btn_search_claer.UseVisualStyleBackColor = false;
@@ -113,9 +113,9 @@
             // 
             this.Label2_count_doc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label2_count_doc.AutoSize = true;
-            this.Label2_count_doc.Location = new System.Drawing.Point(934, 22);
+            this.Label2_count_doc.Location = new System.Drawing.Point(1038, 27);
             this.Label2_count_doc.Name = "Label2_count_doc";
-            this.Label2_count_doc.Size = new System.Drawing.Size(19, 13);
+            this.Label2_count_doc.Size = new System.Drawing.Size(23, 17);
             this.Label2_count_doc.TabIndex = 401;
             this.Label2_count_doc.Text = "L2";
             // 
@@ -123,9 +123,9 @@
             // 
             this.Label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(936, 7);
+            this.Label1.Location = new System.Drawing.Point(1040, 9);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(57, 13);
+            this.Label1.Size = new System.Drawing.Size(70, 17);
             this.Label1.TabIndex = 400;
             this.Label1.Text = "عدد النتائج";
             // 
@@ -134,9 +134,9 @@
             this.Label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label15.AutoSize = true;
             this.Label15.BackColor = System.Drawing.Color.White;
-            this.Label15.Location = new System.Drawing.Point(959, 21);
+            this.Label15.Location = new System.Drawing.Point(1067, 26);
             this.Label15.Name = "Label15";
-            this.Label15.Size = new System.Drawing.Size(12, 13);
+            this.Label15.Size = new System.Drawing.Size(13, 17);
             this.Label15.TabIndex = 408;
             this.Label15.Text = "/";
             // 
@@ -145,15 +145,15 @@
             this.Label2_count_doc_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Label2_count_doc_search.AutoSize = true;
             this.Label2_count_doc_search.BackColor = System.Drawing.Color.White;
-            this.Label2_count_doc_search.Location = new System.Drawing.Point(970, 21);
+            this.Label2_count_doc_search.Location = new System.Drawing.Point(1080, 26);
             this.Label2_count_doc_search.Name = "Label2_count_doc_search";
-            this.Label2_count_doc_search.Size = new System.Drawing.Size(48, 13);
+            this.Label2_count_doc_search.Size = new System.Drawing.Size(59, 17);
             this.Label2_count_doc_search.TabIndex = 407;
             this.Label2_count_doc_search.Text = "L2_sech";
             // 
             // NumericUpDown_font_size
             // 
-            this.NumericUpDown_font_size.Location = new System.Drawing.Point(28, 11);
+            this.NumericUpDown_font_size.Location = new System.Drawing.Point(33, 14);
             this.NumericUpDown_font_size.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NumericUpDown_font_size.Maximum = new decimal(new int[] {
             25,
@@ -166,7 +166,7 @@
             0,
             0});
             this.NumericUpDown_font_size.Name = "NumericUpDown_font_size";
-            this.NumericUpDown_font_size.Size = new System.Drawing.Size(44, 20);
+            this.NumericUpDown_font_size.Size = new System.Drawing.Size(51, 24);
             this.NumericUpDown_font_size.TabIndex = 409;
             this.NumericUpDown_font_size.Value = new decimal(new int[] {
             10,
@@ -179,18 +179,18 @@
             // 
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2.Location = new System.Drawing.Point(77, 15);
+            this.Label2.Location = new System.Drawing.Point(90, 18);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(57, 14);
+            this.Label2.Size = new System.Drawing.Size(72, 18);
             this.Label2.TabIndex = 410;
             this.Label2.Text = "حجم الخط";
             // 
             // Form_view_data_dqv
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1188, 640);
+            this.ClientSize = new System.Drawing.Size(1499, 818);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.NumericUpDown_font_size);
             this.Controls.Add(this.Label15);

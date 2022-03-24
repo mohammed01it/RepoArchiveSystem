@@ -182,11 +182,12 @@ SELECT  [DepartmentID]
             TabPage t = new TabPage();
             new_tab.TopLevel = false;
             t.Controls.Add(new_tab);
-            metroTabControl1.TabPages.Add(t);
+            metroTabControl1.TabPages.Insert(1,t);//or  metroTabControl1.TabPages.Add(t);
             new_tab.Show();
             new_tab.Dock = DockStyle.Fill;
             int x = metroTabControl1.TabCount;
-            t.Text = "الارشيف العام" + x;
+            t.Text = "الارشيف العام";// + x
+            metroTabControl1.SelectTab(1);
             //metroTabControl1.SelectTab(x - 1);
             //---------------end-----------------
 

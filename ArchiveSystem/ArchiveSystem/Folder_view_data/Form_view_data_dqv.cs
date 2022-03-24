@@ -34,13 +34,13 @@ namespace ArchiveSystem.Folder_view_data
 
             adapter = new SqlDataAdapter(@"SELECT
 
-
+dbo.ArchiveBooks_TBL.BookCode as [كود الكتاب],
 dbo.ArchiveBooks_TBL.BookNumber as [رقم الكتاب],
 dbo.ArchiveBooks_TBL.BookDate as [تاريخ الكتاب],
 dbo.ArchiveBooks_TBL.InboundNumber as [رقم واردنا],
 dbo.ArchiveBooks_TBL.InboundDate as [تاريخ واردنا],
 dbo.ArchiveBooks_TBL.Subject as [موضوع الكتاب],
-dbo.ArchiveBooks_TBL.BooksTypeID as [النوع(الكابينة)],
+dbo.BooksType_TBL.BookTypeName as [النوع(الكابينة)],
 dbo.ArchiveBooks_TBL.[From] as [من],
 dbo.ArchiveBooks_TBL.[To] as [الى],
 dbo.ArchiveBooks_TBL.SearchKeys as [مفاتيح البحث],
@@ -48,13 +48,18 @@ dbo.ArchiveBooks_TBL.BookPriority as [الاولوية],
 dbo.ArchiveBooks_TBL.ArchivedDate as [تاريخ الارشفة],
 dbo.ArchiveBooks_TBL.BookPaperType as [نوع النسخة],
 dbo.ArchiveBooks_TBL.Notes as [الملاحظات],
-dbo.ArchiveBooks_TBL.DepartmentID_archivedBy as [القسم],
-dbo.ArchiveBooks_TBL.UserID_archivedBy as [المستخدم],
+dbo.Departments_TBL.DepartmentName as [القسم],
+dbo.Users_TBL.Username as [المستخدم],
 dbo.ArchiveBooks_TBL.BookStatus as [حالة الكتاب],
 dbo.ArchiveBooks_TBL.Privacy as [الخصوصية]
 
 
-FROM ArchiveBooks_TBL
+FROM   dbo.ArchiveBooks_TBL INNER JOIN
+                  dbo.Departments_TBL ON dbo.ArchiveBooks_TBL.DepartmentID_archivedBy = dbo.Departments_TBL.DepartmentID INNER JOIN
+                  dbo.Users_TBL ON dbo.ArchiveBooks_TBL.UserID_archivedBy = dbo.Users_TBL.UserID INNER JOIN
+                  dbo.BooksType_TBL ON dbo.ArchiveBooks_TBL.BooksTypeID = dbo.BooksType_TBL.BooksTypeID
+
+
                 ", con);
 
 

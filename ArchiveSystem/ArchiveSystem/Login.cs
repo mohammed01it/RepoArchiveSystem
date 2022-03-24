@@ -98,5 +98,22 @@ namespace ArchiveSystem
 
 
         }
+
+        private void TXT_pass_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+                try
+                {
+                    if (e.KeyCode == Keys.Enter)
+                    {
+                        BTN_Login.PerformClick();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "حدث خطأ يرجى المحاولة مجددا", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign, true);
+                }
+           
+        }
     }
 }

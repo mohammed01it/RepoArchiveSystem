@@ -1,726 +1,86 @@
 
-3/21/2022 10:40:50 AM: Application started
-3/21/2022 10:41:33 AM: Application closed
+3/23/2022 9:46:26 PM: Application started
+3/23/2022 9:47:12 PM: Application closed
 
-3/21/2022 10:42:32 AM: Application started
-3/21/2022 10:42:40 AM: Application closed
+3/23/2022 9:47:38 PM: Application started
+3/23/2022 9:47:56 PM: Application closed
 
-3/21/2022 10:44:19 AM: Application started
-3/21/2022 10:45:06 AM: Application closed
+3/23/2022 9:48:14 PM: Application started
+3/23/2022 9:48:18 PM: Application closed
 
-3/21/2022 10:47:51 AM: Application started
+3/23/2022 9:49:39 PM: Application started
+3/23/2022 9:49:53 PM: Application closed
 
-3/21/2022 10:48:09 AM: Application started
+3/23/2022 9:51:31 PM: Application started
+3/23/2022 9:51:36 PM: Application closed
 
-3/21/2022 10:48:40 AM: Application started
-3/21/2022 10:49:11 AM: Application closed
+3/23/2022 9:51:48 PM: Application started
+3/23/2022 9:52:16 PM: Application closed
 
-3/21/2022 10:50:28 AM: Application started
-3/21/2022 10:50:36 AM: Application closed
+3/23/2022 9:52:32 PM: Application started
 
-3/21/2022 10:50:57 AM: Application started
-3/21/2022 10:51:04 AM: Application closed
+3/23/2022 9:53:58 PM: Application started
+3/23/2022 9:54:38 PM: Application closed
 
-3/21/2022 10:51:16 AM: Application started
-3/21/2022 10:51:26 AM: Application closed
+3/23/2022 10:02:49 PM: Application started
+3/23/2022 10:03:15 PM: Application closed
 
-3/21/2022 10:52:04 AM: Application started
+3/23/2022 10:07:19 PM: Application started
+3/23/2022 10:08:32 PM: Application closed
 
-3/21/2022 10:53:32 AM: Application started
+3/23/2022 10:18:07 PM: Application started
+3/23/2022 10:18:16 PM: Application closed
 
-3/21/2022 11:03:16 AM: Application started
-3/21/2022 11:04:14 AM: Configuration saved
-3/21/2022 11:04:19 AM: Configuration saved
-3/21/2022 11:04:23 AM: Application closed
+3/23/2022 10:18:39 PM: Application started
 
-3/21/2022 11:04:25 AM: Application started
-3/21/2022 11:04:25 AM: Configuration loaded
-3/21/2022 11:04:43 AM: Configuration saved
-3/21/2022 11:04:52 AM: Starting acquisition (Brother)
-3/21/2022 11:04:52 AM: Setup device handling
-3/21/2022 11:04:52 AM: Setup device properties
-3/21/2022 11:04:52 AM: DEBUG: document handling 2
-3/21/2022 11:04:52 AM: DEBUG: feeder status 3
-3/21/2022 11:05:11 AM: Finished scanning 1 files
-3/21/2022 11:05:11 AM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\book2
+3/23/2022 10:21:31 PM: Application started
+3/23/2022 10:21:51 PM: Application closed
 
-3/21/2022 11:05:23 AM: Application started
-3/21/2022 11:05:23 AM: Configuration loaded
-3/21/2022 11:07:58 AM: Application closed
+3/23/2022 10:22:06 PM: Application started
+3/23/2022 10:22:08 PM: Application closed
 
-3/21/2022 11:08:43 AM: Application started
-3/21/2022 11:08:43 AM: Configuration loaded
-3/21/2022 11:08:48 AM: Application closed
+3/23/2022 10:22:16 PM: Application started
+3/23/2022 10:22:18 PM: Application closed
 
-3/21/2022 11:09:36 AM: Application started
-3/21/2022 11:09:36 AM: Configuration loaded
-3/21/2022 11:09:40 AM: Application closed
+3/23/2022 10:25:05 PM: Application started
 
-3/21/2022 11:10:48 AM: Application started
-3/21/2022 11:10:48 AM: Configuration loaded
-3/21/2022 11:11:06 AM: Application closed
+3/23/2022 10:26:44 PM: Application started
+3/23/2022 10:27:22 PM: Application closed
 
-3/21/2022 11:11:58 AM: Application started
-3/21/2022 11:11:58 AM: Configuration loaded
-3/21/2022 11:12:17 AM: Application closed
+3/23/2022 10:31:25 PM: Application started
+3/23/2022 10:32:44 PM: Application closed
 
-3/21/2022 11:37:25 AM: Application started
-3/21/2022 11:37:26 AM: Configuration loaded
-
-3/21/2022 11:40:29 AM: Application started
-3/21/2022 11:40:29 AM: Configuration loaded
-
-3/21/2022 11:40:37 AM: Application started
-3/21/2022 11:40:37 AM: Configuration loaded
-
-3/21/2022 11:43:35 AM: Application started
-3/21/2022 11:43:35 AM: Configuration loaded
-3/21/2022 11:43:46 AM: Application closed
-
-3/21/2022 11:50:05 AM: Application started
-3/21/2022 11:50:05 AM: Configuration loaded
-3/21/2022 11:50:09 AM: Application closed
-
-3/21/2022 11:50:16 AM: Application started
-3/21/2022 11:50:16 AM: Configuration loaded
-3/21/2022 11:50:20 AM: Application closed
-
-3/21/2022 11:50:45 AM: Application started
-3/21/2022 11:50:46 AM: Configuration loaded
-3/21/2022 11:50:49 AM: Application closed
-
-3/21/2022 11:51:03 AM: Application started
-3/21/2022 11:51:03 AM: Configuration loaded
-3/21/2022 11:51:06 AM: Application closed
-
-3/21/2022 11:53:23 AM: Application started
-3/21/2022 11:53:23 AM: Configuration loaded
-3/21/2022 11:53:26 AM: Application closed
-
-3/21/2022 11:53:43 AM: Application started
-3/21/2022 11:53:43 AM: Configuration loaded
-3/21/2022 11:53:47 AM: Application closed
-
-3/21/2022 11:59:42 AM: Application started
-3/21/2022 11:59:42 AM: Configuration loaded
-3/21/2022 12:39:07 PM: Application closed
-
-3/21/2022 12:39:09 PM: Application started
-3/21/2022 12:39:09 PM: Configuration loaded
-3/21/2022 12:40:13 PM: Application closed
-
-3/21/2022 12:40:16 PM: Application started
-3/21/2022 12:40:16 PM: Configuration loaded
-
-3/21/2022 12:40:50 PM: Application started
-3/21/2022 12:40:50 PM: Configuration loaded
-3/21/2022 12:41:36 PM: Application closed
-
-3/21/2022 12:43:40 PM: Application started
-3/21/2022 12:43:40 PM: Configuration loaded
-
-3/21/2022 12:45:17 PM: Application started
-3/21/2022 12:45:17 PM: Configuration loaded
-
-3/21/2022 12:46:00 PM: Application started
-3/21/2022 12:46:00 PM: Configuration loaded
-3/21/2022 12:46:06 PM: Application closed
-
-3/21/2022 12:46:15 PM: Application started
-3/21/2022 12:46:15 PM: Configuration loaded
-3/21/2022 12:46:38 PM: Configuration saved
-3/21/2022 12:46:42 PM: Starting acquisition (Brother)
-3/21/2022 12:46:42 PM: Setup device handling
-3/21/2022 12:46:42 PM: Setup device properties
-3/21/2022 12:46:42 PM: DEBUG: document handling 2
-3/21/2022 12:46:42 PM: DEBUG: feeder status 3
-3/21/2022 12:47:21 PM: Finished scanning 1 files
-3/21/2022 12:47:21 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\book2
-
-3/21/2022 12:48:48 PM: Application started
-3/21/2022 12:48:48 PM: Configuration loaded
-
-3/21/2022 12:49:52 PM: Application started
-3/21/2022 12:49:52 PM: Configuration loaded
-3/21/2022 12:50:02 PM: Application closed
-
-3/21/2022 12:59:13 PM: Application started
-3/21/2022 12:59:13 PM: Configuration loaded
-3/21/2022 12:59:46 PM: Application closed
-
-3/21/2022 1:00:06 PM: Application started
-3/21/2022 1:00:06 PM: Configuration loaded
-
-3/21/2022 1:00:12 PM: Application started
-3/21/2022 1:00:12 PM: Configuration loaded
-3/21/2022 1:00:26 PM: Configuration saved
-3/21/2022 1:00:29 PM: Starting acquisition (Brother)
-3/21/2022 1:00:29 PM: Setup device handling
-3/21/2022 1:00:29 PM: Setup device properties
-3/21/2022 1:00:29 PM: DEBUG: document handling 2
-3/21/2022 1:00:29 PM: DEBUG: feeder status 3
-
-3/21/2022 1:00:44 PM: Application started
-3/21/2022 1:00:44 PM: Configuration loaded
-3/21/2022 1:00:56 PM: Starting acquisition (Brother)
-3/21/2022 1:00:56 PM: Setup device handling
-3/21/2022 1:00:56 PM: Setup device properties
-3/21/2022 1:00:56 PM: DEBUG: document handling 2
-3/21/2022 1:00:56 PM: DEBUG: feeder status 3
-3/21/2022 1:01:14 PM: Finished scanning 1 files
-3/21/2022 1:01:14 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\ss
-
-3/21/2022 1:01:21 PM: Application started
-3/21/2022 1:01:21 PM: Configuration loaded
-
-3/21/2022 1:02:04 PM: Application started
-3/21/2022 1:02:04 PM: Configuration loaded
-3/21/2022 1:02:22 PM: Application closed
-
-3/21/2022 1:03:08 PM: Application started
-3/21/2022 1:03:08 PM: Configuration loaded
-
-3/21/2022 1:03:33 PM: Application started
-3/21/2022 1:03:33 PM: Configuration loaded
-3/21/2022 1:03:49 PM: Application closed
-
-3/21/2022 1:07:12 PM: Application started
-3/21/2022 1:07:12 PM: Configuration loaded
-3/21/2022 1:07:26 PM: Starting acquisition (Brother)
-3/21/2022 1:07:26 PM: Setup device handling
-3/21/2022 1:07:26 PM: Setup device properties
-3/21/2022 1:07:26 PM: DEBUG: document handling 2
-3/21/2022 1:07:26 PM: DEBUG: feeder status 3
-3/21/2022 1:07:43 PM: Finished scanning 1 files
-3/21/2022 1:07:43 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\ss
-
-3/21/2022 1:07:55 PM: Application started
-3/21/2022 1:07:55 PM: Configuration loaded
-
-3/21/2022 1:08:22 PM: Application started
-3/21/2022 1:08:22 PM: Configuration loaded
+3/23/2022 10:39:48 PM: Application started
 
-3/21/2022 1:23:11 PM: Application started
-3/21/2022 1:23:11 PM: Configuration loaded
-
-3/21/2022 1:23:23 PM: Application started
-3/21/2022 1:23:23 PM: Configuration loaded
-
-3/21/2022 1:23:34 PM: Application started
-3/21/2022 1:23:34 PM: Configuration loaded
-
-3/21/2022 1:23:53 PM: Application started
-3/21/2022 1:23:53 PM: Configuration loaded
+3/23/2022 11:09:31 PM: Application started
+3/23/2022 11:10:07 PM: Application closed
 
-3/21/2022 1:24:40 PM: Application started
-3/21/2022 1:24:40 PM: Configuration loaded
-
-3/21/2022 1:26:22 PM: Application started
-3/21/2022 1:26:22 PM: Configuration loaded
-
-2022/03/21 1:41:33 PM: Application started
-2022/03/21 1:41:33 PM: Configuration loaded
-2022/03/21 1:43:01 PM: Application closed
-
-2022/03/21 1:43:03 PM: Application started
-2022/03/21 1:43:04 PM: Configuration loaded
-
-2022/03/21 1:50:20 PM: Application started
-2022/03/21 1:50:20 PM: Configuration loaded
-2022/03/21 1:50:23 PM: Application closed
-
-2022/03/21 1:52:14 PM: Application started
-2022/03/21 1:52:14 PM: Configuration loaded
-2022/03/21 2:16:29 PM: Application closed
-
-2022/03/21 2:19:56 PM: Application started
-2022/03/21 2:19:57 PM: Configuration loaded
-2022/03/21 2:20:07 PM: Application closed
-
-2022/03/21 2:20:32 PM: Application started
-2022/03/21 2:20:32 PM: Configuration loaded
-2022/03/21 2:20:38 PM: Application closed
-
-2022/03/21 2:20:43 PM: Application started
-2022/03/21 2:20:43 PM: Configuration loaded
-2022/03/21 2:21:07 PM: Application closed
-
-2022/03/21 2:21:24 PM: Application started
-2022/03/21 2:21:24 PM: Configuration loaded
-2022/03/21 2:21:27 PM: Application closed
-
-2022/03/21 2:49:32 PM: Application started
-2022/03/21 2:49:32 PM: Configuration loaded
-2022/03/21 2:50:02 PM: Application closed
-
-2022/03/21 3:04:39 PM: Application started
-2022/03/21 3:04:39 PM: Configuration loaded
+3/23/2022 11:10:32 PM: Application started
 
-2022/03/21 3:04:58 PM: Application started
-2022/03/21 3:04:58 PM: Configuration loaded
-
-2022/03/21 3:08:28 PM: Application started
-2022/03/21 3:08:28 PM: Configuration loaded
-2022/03/21 3:09:09 PM: Application closed
-
-2022/03/21 3:09:11 PM: Application started
-2022/03/21 3:09:11 PM: Configuration loaded
-2022/03/21 3:10:12 PM: Application closed
-
-2022/03/21 3:10:35 PM: Application started
-2022/03/21 3:10:35 PM: Configuration loaded
-2022/03/21 3:10:59 PM: Application closed
-
-2022/03/22 10:48:24 AM: Application started
-2022/03/22 10:48:24 AM: Configuration loaded
-
-2022/03/22 10:49:31 AM: Application started
-2022/03/22 10:49:32 AM: Configuration loaded
-2022/03/22 10:49:41 AM: Application closed
-
-2022/03/22 10:58:52 AM: Application started
-2022/03/22 10:58:52 AM: Configuration loaded
-
-2022/03/22 11:03:12 AM: Application started
-2022/03/22 11:03:12 AM: Configuration loaded
-2022/03/22 11:03:26 AM: Application closed
-
-2022/03/22 11:18:35 AM: Application started
-2022/03/22 11:18:36 AM: Configuration loaded
+3/23/2022 11:11:13 PM: Application started
 
-2022/03/22 11:18:48 AM: Application started
-2022/03/22 11:18:48 AM: Configuration loaded
-
-2022/03/22 11:23:19 AM: Application started
-2022/03/22 11:23:19 AM: Configuration loaded
-2022/03/22 11:24:38 AM: Application closed
-
-2022/03/22 11:51:39 AM: Application started
-2022/03/22 11:51:39 AM: Configuration loaded
-2022/03/22 11:52:21 AM: Application closed
-
-2022/03/22 12:40:34 PM: Application started
-2022/03/22 12:40:34 PM: Configuration loaded
-2022/03/22 12:40:39 PM: Application closed
-
-2022/03/22 12:40:59 PM: Application started
-2022/03/22 12:40:59 PM: Configuration loaded
-2022/03/22 12:41:41 PM: Application closed
-
-2022/03/22 12:43:32 PM: Application started
-2022/03/22 12:43:32 PM: Configuration loaded
-2022/03/22 12:43:40 PM: Application closed
-
-2022/03/22 12:48:45 PM: Application started
-2022/03/22 12:48:45 PM: Configuration loaded
-2022/03/22 12:49:13 PM: Application closed
-
-2022/03/22 12:50:25 PM: Application started
-2022/03/22 12:50:25 PM: Configuration loaded
-2022/03/22 12:53:06 PM: Application closed
-
-2022/03/22 12:54:11 PM: Application started
-2022/03/22 12:54:11 PM: Configuration loaded
-2022/03/22 12:54:23 PM: Application closed
-
-2022/03/22 12:54:53 PM: Application started
-2022/03/22 12:54:53 PM: Configuration loaded
-2022/03/22 12:55:14 PM: Application closed
-
-2022/03/22 12:56:06 PM: Application started
-2022/03/22 12:56:06 PM: Configuration loaded
-2022/03/22 12:57:04 PM: Application closed
-
-2022/03/22 12:57:34 PM: Application started
-2022/03/22 12:57:34 PM: Configuration loaded
-2022/03/22 12:58:22 PM: Application closed
-
-2022/03/22 12:58:27 PM: Application started
-2022/03/22 12:58:27 PM: Configuration loaded
-2022/03/22 12:58:46 PM: Application closed
-
-2022/03/22 12:59:02 PM: Application started
-2022/03/22 12:59:02 PM: Configuration loaded
-2022/03/22 12:59:16 PM: Application closed
+3/23/2022 11:16:03 PM: Application started
 
-2022/03/22 12:59:30 PM: Application started
-2022/03/22 12:59:30 PM: Configuration loaded
-2022/03/22 1:02:50 PM: Application closed
+3/23/2022 11:17:47 PM: Application started
 
-2022/03/22 1:03:03 PM: Application started
-2022/03/22 1:03:03 PM: Configuration loaded
-2022/03/22 1:03:12 PM: Application closed
+3/23/2022 11:21:00 PM: Application started
 
-2022/03/22 1:03:27 PM: Application started
-2022/03/22 1:03:27 PM: Configuration loaded
-2022/03/22 1:03:37 PM: Application closed
+3/23/2022 11:22:36 PM: Application started
 
-2022/03/22 1:04:42 PM: Application started
-2022/03/22 1:04:42 PM: Configuration loaded
-2022/03/22 1:05:49 PM: Application closed
+3/23/2022 11:32:52 PM: Application started
 
-2022/03/22 1:08:53 PM: Application started
-2022/03/22 1:08:53 PM: Configuration loaded
-2022/03/22 1:09:09 PM: Application closed
+3/23/2022 11:34:17 PM: Application started
 
-2022/03/22 1:11:10 PM: Application started
-2022/03/22 1:11:11 PM: Configuration loaded
-2022/03/22 1:12:03 PM: Application closed
+3/23/2022 11:35:20 PM: Application started
 
-2022/03/22 1:12:21 PM: Application started
-2022/03/22 1:12:21 PM: Configuration loaded
-2022/03/22 1:13:41 PM: Application closed
+3/23/2022 11:37:20 PM: Application started
+3/23/2022 11:37:31 PM: Application closed
 
-2022/03/22 1:13:46 PM: Application started
-2022/03/22 1:13:46 PM: Configuration loaded
-2022/03/22 1:13:56 PM: Application closed
+3/23/2022 11:39:39 PM: Application started
+3/23/2022 11:40:44 PM: Application closed
 
-2022/03/22 1:15:09 PM: Application started
-2022/03/22 1:15:09 PM: Configuration loaded
-2022/03/22 1:15:30 PM: Application closed
+3/23/2022 11:48:09 PM: Application started
+3/23/2022 11:49:43 PM: Application closed
 
-2022/03/22 1:15:40 PM: Application started
-2022/03/22 1:15:40 PM: Configuration loaded
-2022/03/22 1:15:48 PM: Application closed
-
-2022/03/22 1:15:54 PM: Application started
-2022/03/22 1:15:54 PM: Configuration loaded
-2022/03/22 1:18:46 PM: Application closed
-
-2022/03/22 1:19:03 PM: Application started
-2022/03/22 1:19:04 PM: Configuration loaded
-2022/03/22 1:20:15 PM: Application closed
-
-2022/03/22 1:21:44 PM: Application started
-2022/03/22 1:21:44 PM: Configuration loaded
-2022/03/22 1:21:55 PM: Application closed
-
-2022/03/22 1:26:17 PM: Application started
-2022/03/22 1:26:17 PM: Configuration loaded
-2022/03/22 1:28:50 PM: [Error] Cannot access designated save path.
-2022/03/22 1:28:50 PM: [Error] Provided path is not writable
-2022/03/22 1:29:02 PM: [Error] Cannot access designated save path.
-2022/03/22 1:29:02 PM: [Error] Provided path is not writable
-2022/03/22 1:29:37 PM: Application closed
-
-2022/03/22 1:47:52 PM: Application started
-2022/03/22 1:47:52 PM: Configuration loaded
-2022/03/22 1:48:12 PM: Application closed
-
-2022/03/22 1:48:35 PM: Application started
-2022/03/22 1:48:35 PM: Configuration loaded
-2022/03/22 1:49:50 PM: Application closed
-
-2022/03/22 1:55:48 PM: Application started
-2022/03/22 1:55:48 PM: Configuration loaded
-
-2022/03/22 3:40:09 PM: Application started
-2022/03/22 3:40:09 PM: Configuration loaded
-2022/03/22 3:40:15 PM: Application closed
-
-2022/03/22 3:40:35 PM: Application started
-2022/03/22 3:40:35 PM: Configuration loaded
-2022/03/22 3:41:04 PM: Application closed
-
-2022/03/23 8:11:22 AM: Application started
-2022/03/23 8:11:22 AM: Configuration loaded
-
-3/23/2022 8:45:34 AM: Application started
-3/23/2022 8:45:34 AM: Configuration loaded
-3/23/2022 8:47:30 AM: Application closed
-
-2022/03/23 9:01:56 AM: Application started
-2022/03/23 9:01:56 AM: Configuration loaded
-
-2022/03/23 9:02:59 AM: Application started
-2022/03/23 9:02:59 AM: Configuration loaded
-
-2022/03/23 9:10:15 AM: Application started
-2022/03/23 9:10:15 AM: Configuration loaded
-2022/03/23 9:10:22 AM: Application closed
-
-2022/03/23 9:11:34 AM: Application started
-2022/03/23 9:11:34 AM: Configuration loaded
-
-2022/03/23 9:15:36 AM: Application started
-2022/03/23 9:15:36 AM: Configuration loaded
-
-2022/03/23 9:16:30 AM: Application started
-2022/03/23 9:16:30 AM: Configuration loaded
-2022/03/23 9:17:03 AM: Application closed
-
-2022/03/23 9:17:15 AM: Application started
-2022/03/23 9:17:15 AM: Configuration loaded
-2022/03/23 9:17:22 AM: Application closed
-
-2022/03/23 9:17:42 AM: Application started
-2022/03/23 9:17:43 AM: Configuration loaded
-2022/03/23 9:18:37 AM: Application closed
-
-3/23/2022 9:25:46 AM: Application started
-3/23/2022 9:25:46 AM: Configuration loaded
-
-3/23/2022 9:27:02 AM: Application started
-3/23/2022 9:27:02 AM: Configuration loaded
-3/23/2022 9:27:24 AM: Application closed
-
-3/23/2022 9:28:42 AM: Application started
-3/23/2022 9:28:42 AM: Configuration loaded
-3/23/2022 9:29:37 AM: Application closed
-
-3/23/2022 9:42:18 AM: Application started
-3/23/2022 9:42:19 AM: Configuration loaded
-3/23/2022 9:43:03 AM: Application closed
-
-3/23/2022 9:44:16 AM: Application started
-3/23/2022 9:44:16 AM: Configuration loaded
-3/23/2022 9:44:24 AM: Application closed
-
-3/23/2022 9:45:41 AM: Application started
-3/23/2022 9:45:41 AM: Configuration loaded
-3/23/2022 9:45:48 AM: Application closed
-
-3/23/2022 9:49:13 AM: Application started
-3/23/2022 9:49:13 AM: Configuration loaded
-3/23/2022 9:49:20 AM: Application closed
-
-3/23/2022 9:50:06 AM: Application started
-3/23/2022 9:50:06 AM: Configuration loaded
-3/23/2022 9:50:17 AM: Application closed
-
-3/23/2022 9:50:54 AM: Application started
-3/23/2022 9:50:54 AM: Configuration loaded
-3/23/2022 9:51:16 AM: Application closed
-
-3/23/2022 9:52:14 AM: Application started
-3/23/2022 9:52:14 AM: Configuration loaded
-3/23/2022 9:52:20 AM: Application closed
-
-3/23/2022 9:53:59 AM: Application started
-3/23/2022 9:53:59 AM: Configuration loaded
-3/23/2022 9:54:10 AM: Application closed
-
-3/23/2022 9:54:47 AM: Application started
-3/23/2022 9:54:47 AM: Configuration loaded
-3/23/2022 9:55:16 AM: Application closed
-
-3/23/2022 9:56:54 AM: Application started
-3/23/2022 9:56:54 AM: Configuration loaded
-
-3/23/2022 9:57:49 AM: Application started
-3/23/2022 9:57:49 AM: Configuration loaded
-3/23/2022 9:58:24 AM: Application closed
-
-3/23/2022 10:02:40 AM: Application started
-3/23/2022 10:02:40 AM: Configuration loaded
-3/23/2022 10:03:11 AM: Application closed
-
-3/23/2022 10:05:58 AM: Application started
-3/23/2022 10:05:58 AM: Configuration loaded
-3/23/2022 10:06:16 AM: Application closed
-
-3/23/2022 10:13:04 AM: Application started
-3/23/2022 10:13:05 AM: Configuration loaded
-3/23/2022 10:13:29 AM: Application closed
-
-3/23/2022 10:17:37 AM: Application started
-3/23/2022 10:17:37 AM: Configuration loaded
-3/23/2022 10:18:12 AM: Application closed
-
-3/23/2022 10:18:56 AM: Application started
-3/23/2022 10:18:56 AM: Configuration loaded
-3/23/2022 10:19:18 AM: Application closed
-
-3/23/2022 10:21:54 AM: Application started
-3/23/2022 10:21:54 AM: Configuration loaded
-3/23/2022 10:22:14 AM: Application closed
-
-3/23/2022 10:23:02 AM: Application started
-3/23/2022 10:23:02 AM: Configuration loaded
-3/23/2022 10:23:39 AM: Application closed
-
-3/23/2022 10:23:41 AM: Application started
-3/23/2022 10:23:41 AM: Configuration loaded
-3/23/2022 10:23:44 AM: Application closed
-
-3/23/2022 10:23:45 AM: Application started
-3/23/2022 10:23:45 AM: Configuration loaded
-3/23/2022 10:24:09 AM: Application closed
-
-3/23/2022 10:24:30 AM: Application started
-3/23/2022 10:24:30 AM: Configuration loaded
-3/23/2022 10:24:42 AM: Application closed
-
-3/23/2022 10:28:34 AM: Application started
-3/23/2022 10:28:34 AM: Configuration loaded
-3/23/2022 10:29:45 AM: Application closed
-
-3/23/2022 10:42:51 AM: Application started
-3/23/2022 10:42:51 AM: Configuration loaded
-3/23/2022 10:43:05 AM: Application closed
-
-3/23/2022 10:51:55 AM: Application started
-3/23/2022 10:51:55 AM: Configuration loaded
-3/23/2022 10:52:02 AM: Application closed
-
-3/23/2022 10:52:36 AM: Application started
-3/23/2022 10:52:36 AM: Configuration loaded
-3/23/2022 10:52:51 AM: Application closed
-
-3/23/2022 10:53:22 AM: Application started
-3/23/2022 10:53:22 AM: Configuration loaded
-3/23/2022 10:53:26 AM: Application closed
-
-3/23/2022 10:55:29 AM: Application started
-3/23/2022 10:55:29 AM: Configuration loaded
-3/23/2022 10:55:33 AM: Application closed
-
-3/23/2022 10:55:44 AM: Application started
-3/23/2022 10:55:44 AM: Configuration loaded
-3/23/2022 10:56:27 AM: Application closed
-
-3/23/2022 11:25:50 AM: Application started
-3/23/2022 11:25:50 AM: Configuration loaded
-
-3/23/2022 11:27:56 AM: Application started
-3/23/2022 11:27:56 AM: Configuration loaded
-
-3/23/2022 11:29:54 AM: Application started
-3/23/2022 11:29:54 AM: Configuration loaded
-
-3/23/2022 11:30:08 AM: Application started
-3/23/2022 11:30:08 AM: Configuration loaded
-
-3/23/2022 11:30:32 AM: Application started
-3/23/2022 11:30:32 AM: Configuration loaded
-3/23/2022 11:30:34 AM: Application closed
-
-3/23/2022 11:30:39 AM: Application started
-3/23/2022 11:30:39 AM: Configuration loaded
-3/23/2022 11:30:42 AM: Application closed
-
-3/23/2022 11:30:43 AM: Application started
-3/23/2022 11:30:44 AM: Configuration loaded
-
-3/23/2022 11:31:58 AM: Application started
-3/23/2022 11:31:58 AM: Configuration loaded
-
-3/23/2022 12:36:50 PM: Application started
-3/23/2022 12:36:50 PM: Configuration loaded
-3/23/2022 12:36:51 PM: Application closed
-
-3/23/2022 12:36:54 PM: Application started
-3/23/2022 12:36:54 PM: Configuration loaded
-
-3/23/2022 12:53:08 PM: Application started
-3/23/2022 12:53:08 PM: Configuration loaded
-3/23/2022 12:53:21 PM: Application closed
-
-3/23/2022 12:53:44 PM: Application started
-3/23/2022 12:53:44 PM: Configuration loaded
-3/23/2022 12:53:55 PM: Application closed
-
-3/23/2022 1:02:12 PM: Application started
-3/23/2022 1:02:12 PM: Configuration loaded
-
-3/23/2022 1:02:17 PM: Application started
-3/23/2022 1:02:17 PM: Configuration loaded
-3/23/2022 1:02:58 PM: Application closed
-3/23/2022 1:03:03 PM: Application closed
-
-3/23/2022 1:04:01 PM: Application started
-3/23/2022 1:04:01 PM: Configuration loaded
-
-3/23/2022 1:04:58 PM: Application started
-3/23/2022 1:04:58 PM: Configuration loaded
-
-3/23/2022 1:05:06 PM: Application started
-3/23/2022 1:05:06 PM: Configuration loaded
-
-3/23/2022 1:05:38 PM: Application started
-3/23/2022 1:05:38 PM: Configuration loaded
-
-3/23/2022 1:07:13 PM: Application started
-3/23/2022 1:07:13 PM: Configuration loaded
-3/23/2022 1:07:37 PM: Application closed
-
-3/23/2022 1:07:48 PM: Application started
-3/23/2022 1:07:48 PM: Configuration loaded
-3/23/2022 1:08:03 PM: Application closed
-
-3/23/2022 1:08:05 PM: Application started
-3/23/2022 1:08:05 PM: Configuration loaded
-
-3/23/2022 1:09:13 PM: Application started
-3/23/2022 1:09:14 PM: Configuration loaded
-
-3/23/2022 1:10:16 PM: Application started
-3/23/2022 1:10:16 PM: Configuration loaded
-
-3/23/2022 1:11:36 PM: Application started
-3/23/2022 1:11:36 PM: Configuration loaded
-
-3/23/2022 1:48:51 PM: Application started
-3/23/2022 1:48:51 PM: Configuration loaded
-
-3/23/2022 1:51:34 PM: Application started
-3/23/2022 1:51:34 PM: Configuration loaded
-
-3/23/2022 1:58:57 PM: Application started
-3/23/2022 1:58:57 PM: Configuration loaded
-
-3/23/2022 2:05:03 PM: Application started
-3/23/2022 2:05:03 PM: Configuration loaded
-
-3/23/2022 2:14:24 PM: Application started
-3/23/2022 2:14:24 PM: Configuration loaded
-
-3/23/2022 2:17:44 PM: Application started
-3/23/2022 2:17:44 PM: Configuration loaded
-
-3/23/2022 2:21:07 PM: Application started
-3/23/2022 2:21:07 PM: Configuration loaded
-
-3/23/2022 2:24:10 PM: Application started
-3/23/2022 2:24:10 PM: Configuration loaded
-3/23/2022 2:24:28 PM: Application closed
-
-3/23/2022 2:24:32 PM: Application started
-3/23/2022 2:24:32 PM: Configuration loaded
-
-3/23/2022 2:26:01 PM: Application started
-3/23/2022 2:26:01 PM: Configuration loaded
-
-3/23/2022 2:35:26 PM: Application started
-3/23/2022 2:35:26 PM: Configuration loaded
-
-3/23/2022 2:36:23 PM: Application started
-3/23/2022 2:36:23 PM: Configuration loaded
-
-3/23/2022 2:52:18 PM: Application started
-3/23/2022 2:52:18 PM: Configuration loaded
-3/23/2022 2:52:33 PM: Application closed
-
-3/23/2022 2:52:42 PM: Application started
-3/23/2022 2:52:42 PM: Configuration loaded
-3/23/2022 2:53:02 PM: Application closed
-
-3/23/2022 2:53:05 PM: Application started
-3/23/2022 2:53:05 PM: Configuration loaded
-3/23/2022 2:53:14 PM: Application closed
-
-3/23/2022 2:53:26 PM: Application started
-3/23/2022 2:53:26 PM: Configuration loaded
-3/23/2022 2:53:35 PM: Application closed
-
-3/23/2022 2:53:57 PM: Application started
-3/23/2022 2:53:57 PM: Configuration loaded
-3/23/2022 2:54:05 PM: Application closed
-
-3/23/2022 2:54:12 PM: Application started
-3/23/2022 2:54:12 PM: Configuration loaded
-3/23/2022 2:54:16 PM: Application closed
-
-3/23/2022 2:55:55 PM: Application started
-3/23/2022 2:55:55 PM: Configuration loaded
-3/23/2022 2:56:06 PM: Application closed
+3/23/2022 11:50:52 PM: Application started
+3/23/2022 11:51:43 PM: Application closed

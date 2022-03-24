@@ -280,3 +280,33 @@
 
 3/24/2022 12:33:44 PM: Application started
 3/24/2022 12:33:44 PM: Configuration loaded
+
+3/24/2022 12:36:06 PM: Application started
+3/24/2022 12:36:06 PM: Configuration loaded
+3/24/2022 12:36:32 PM: Starting acquisition (Brother)
+3/24/2022 12:36:32 PM: Setup device handling
+3/24/2022 12:36:32 PM: Setup device properties
+3/24/2022 12:36:32 PM: DEBUG: document handling 2
+3/24/2022 12:36:32 PM: DEBUG: feeder status 3
+3/24/2022 12:36:47 PM: Finished scanning 1 files
+3/24/2022 12:36:47 PM: Images saved in C:\Users\mohab.MOHAMMED\Desktop\archivedocs\bok1
+
+3/24/2022 12:37:06 PM: Application started
+3/24/2022 12:37:06 PM: Configuration loaded
+3/24/2022 12:40:25 PM: Application closed
+
+3/24/2022 12:40:26 PM: Application started
+3/24/2022 12:40:26 PM: Configuration loaded
+3/24/2022 12:41:45 PM: Application closed
+
+3/24/2022 12:45:04 PM: Application started
+3/24/2022 12:45:04 PM: Configuration loaded
+3/24/2022 12:46:10 PM: Application closed
+
+3/24/2022 12:47:04 PM: Application started
+3/24/2022 12:47:04 PM: Configuration loaded
+
+3/24/2022 12:47:08 PM: Application started
+3/24/2022 12:47:08 PM: Configuration loaded
+3/24/2022 12:47:22 PM: Application closed
+3/24/2022 12:47:24 PM: Application closed

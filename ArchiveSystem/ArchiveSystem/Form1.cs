@@ -334,7 +334,7 @@ SELECT  [DepartmentID]
                 {
                     if (string.IsNullOrWhiteSpace(item.Text))
                     {
-                        item.BackColor = Color.Tomato;
+                        item.BackColor = Color.LightPink;
                     }
                 }   
  

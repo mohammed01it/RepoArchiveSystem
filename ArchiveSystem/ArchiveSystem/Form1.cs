@@ -22,7 +22,7 @@ namespace ArchiveSystem
 
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
-         
+
         public Form1()
         {
             InitializeComponent();
@@ -40,7 +40,7 @@ namespace ArchiveSystem
         public static string _con = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         SqlConnection con = new SqlConnection(_con);
 
-     
+
 
         void Refresh_Folders()
         {
@@ -86,7 +86,7 @@ namespace ArchiveSystem
                 COM_bookType.DataSource = booktypes;
                 COM_bookType.DisplayMember = "BookTypeName";
                 COM_bookType.ValueMember = "BooksTypeID";
-                 
+
                 con.Close();
 
 
@@ -134,12 +134,12 @@ SELECT  [DepartmentID]
             LBL_USERNAME.Text = Login._user;
 
             //bring dep name from id 
-           string depid = Login._depID;
+            int depid = Login._depID;
 
             string query = string.Format(@" SELECT  [DepartmentID]
       ,[DepartmentName]
   FROM [ArchiveSystem].[dbo].[Departments_TBL] where DepartmentID={0}", depid, con);
-  
+
             con.Open();
             SqlCommand cmd = new SqlCommand(query, con);
 
@@ -148,7 +148,7 @@ SELECT  [DepartmentID]
             DataTable dt = new DataTable();
 
             adp.Fill(dt);
-            if(dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0)
             {
                 string DepName = dt.Rows[0]["DepartmentName"].ToString();
                 //put dep name in lable 
@@ -192,7 +192,7 @@ SELECT  [DepartmentID]
 
 
 
-       
+
 
         }
 
@@ -261,11 +261,101 @@ SELECT  [DepartmentID]
             string datenow = DateTime.Now.ToString("hhmmss");
 
             string book_code = TXT_Subject.Text + ran.ToString() + datenow;
-            string departmentID = Login._depID;
-            string userid = Login._userID;
+            int departmentID = Login._depID;
+            int userid = Login._userID;
+            string InboundDate = DT_bookRecive_date.Text;
             
-            
-            string query = string.Format(@"INSERT INTO [dbo].[ArchiveBooks_TBL]
+            //check if fields are empty
+
+
+            string BookNumber = TXT_bookNumber.Text;
+            string InboundNumber = TXT_Book_recive_number.Text;
+           
+            string Subject = TXT_Subject.Text;
+            string From = TXT_From.Text;
+            string To = TXT_To.Text;
+            string SearchKeys = TXT_SearchKEys.Text;
+
+            // check list 
+            //get list of checked rows 
+            List<string> files_checked = new List<string>();
+            for (int i = 0; i < DGV_Files.Rows.Count; i++)
+            {
+                bool is_checked = (bool)DGV_Files.Rows[i].Cells[0].Value;
+                {
+                    if (is_checked == true)
+                    {
+                        //files_checked.Add(dataGridView1.Rows[i].Cells[1].ToString());
+                        files_checked.Add(DGV_Files.Rows[i].Cells[1].Value.ToString());
+                    }
+                }
+            }
+            if (string.IsNullOrWhiteSpace(BookNumber) || string.IsNullOrWhiteSpace(InboundNumber)   || string.IsNullOrWhiteSpace(Subject) || string.IsNullOrWhiteSpace(From) || string.IsNullOrWhiteSpace(To) || string.IsNullOrWhiteSpace(SearchKeys))
+            {
+                List<TextBox> boxes = new List<TextBox>();
+                if (string.IsNullOrWhiteSpace(TXT_bookNumber.Text))
+                {
+                    //highlightTextBox= txtFname;
+                    boxes.Add(TXT_bookNumber);
+                }
+                else { TXT_bookNumber.BackColor = Color.White; }
+                if (string.IsNullOrWhiteSpace(TXT_Book_recive_number.Text))
+                {
+                    //highlightTextBox = txtLname;
+                    boxes.Add(TXT_Book_recive_number);
+                }
+                else { TXT_Book_recive_number.BackColor = Color.White; }
+
+                if (string.IsNullOrWhiteSpace(TXT_Subject.Text))
+                {
+                    //highlightTextBox = txtTown;
+                    boxes.Add(TXT_Subject);
+                }
+                else { TXT_Subject.BackColor = Color.White; }
+                if (string.IsNullOrWhiteSpace(TXT_From.Text))
+                {
+                    //highlightTextBox = txtPostCode;
+                    boxes.Add(TXT_From);
+                }
+                else { TXT_From.BackColor = Color.White; }
+
+                if (string.IsNullOrWhiteSpace(TXT_To.Text))
+                {
+                    //highlightTextBox = txtPostCode;
+                    boxes.Add(TXT_To);
+                }
+                else { TXT_To.BackColor = Color.White; }
+                if (string.IsNullOrWhiteSpace(TXT_SearchKEys.Text))
+                {
+                    //highlightTextBox = txtPostCode;
+                    boxes.Add(TXT_SearchKEys);
+                } else { TXT_SearchKEys.BackColor = Color.White; }
+                foreach (var item in boxes)
+                {
+                    if (string.IsNullOrWhiteSpace(item.Text))
+                    {
+                        item.BackColor = Color.Tomato;
+                    }
+                }   
+ 
+                MessageBox.Show("الرجاء مليء جميع الحقول");
+           
+
+
+            }
+
+            else if (  files_checked.Count <= 0)
+            {
+                MessageBox.Show("الرجاء اختيار صورة المستند");
+            }
+          
+
+
+
+            else
+            {
+
+                string query = string.Format(@"INSERT INTO [dbo].[ArchiveBooks_TBL]
            ([BookCode]
            ,[BookNumber]
            ,[BookDate]
@@ -289,124 +379,160 @@ SELECT  [DepartmentID]
             ) output INSERTED.ArchiveBookID
      VALUES
            (N'{0}','{1}','{2}','{3}','{4}',N'{5}',{6},N'{7}',N'{8}',N'{9}','{10}',N'{11}',N'{12}',{13},{14},N'{15}',N'{16}',N'{17}')
-", book_code, TXT_bookNumber.Text, DT_bookDate.Text, TXT_Book_recive_number.Text, DT_bookRecive_date.Text, TXT_Subject.Text, COM_bookType.SelectedValue, TXT_From.Text, TXT_To.Text, COM_priority.Text, datenow, COM_PaperType.Text, TXT_notes.Text, departmentID, userid,COM_bookStatus.Text, COM_privicy.Text, TXT_SearchKEys.Text ,con);
+", book_code, BookNumber, DT_bookDate.Text, InboundNumber, InboundDate, Subject, COM_bookType.SelectedValue, From, To, COM_priority.Text, datenow, COM_PaperType.Text, TXT_notes.Text, departmentID, userid, COM_bookStatus.Text, COM_privicy.Text, SearchKeys, con);
 
 
 
-         
-            con.Open();
-            SqlCommand cmd = new SqlCommand(query, con);
-            int Book_id = (int)cmd.ExecuteScalar();
-            con.Close();
-            
-            if (Book_id != 0)
-            {
-                // for loop on list of dep and make query to insert in assign table 
-                foreach (Object item in COMLIST_assination.CheckedItems)
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                int Book_id = (int)cmd.ExecuteScalar();
+                con.Close();
+
+                if (Book_id != 0)
                 {
-                    DataRowView drv = item as DataRowView;
-                    int id = Convert.ToInt16(drv["DepartmentID"]);
-                    string asssignQuery = string.Format(@" INSERT INTO [dbo].[Assign&Comment_TBL]
+                    // for loop on list of dep and make query to insert in assign table 
+                    foreach (Object item in COMLIST_assination.CheckedItems)
+                    {
+                        DataRowView drv = item as DataRowView;
+                        int id = Convert.ToInt16(drv["DepartmentID"]);
+                        string asssignQuery = string.Format(@" INSERT INTO [dbo].[Assign&Comment_TBL]
            ([ArchiveBookID]
            ,[DepartmentID]
            ,[Comment])
      VALUES
-           ( {0},{1},N'{2}')",Book_id,id,"", con);
-                     
-                    con.Open();
-                    SqlCommand cmd2 = new SqlCommand(asssignQuery, con);
+           ( {0},{1},N'{2}')", Book_id, id, "", con);
 
-                    cmd2.ExecuteNonQuery();
-                    
-                    con.Close();
+                        con.Open();
+                        SqlCommand cmd2 = new SqlCommand(asssignQuery, con);
+
+                        cmd2.ExecuteNonQuery();
+
+                        con.Close();
+                    }
+
                 }
 
+               
+
+               
+                    //create folder with same db index id
+                    var Typee = COM_bookType.Text;// bring it from dropdown user chose
+                                                          //var BookCat = "كتاب عادي";// bring it from dropdown user chose
+
+
+
+                    WebRequest request_ = WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/");
+                    request_.Method = WebRequestMethods.Ftp.MakeDirectory;
+                    request_.Credentials = new NetworkCredential(FTP_user, FTP_pass);
+                    using (var resp = (FtpWebResponse)request_.GetResponse())
+                    {
+                        Console.WriteLine(resp.StatusCode);
+                    }
+
+
+
+                    //create array of string with all local dir files names
+
+                    string[] Files = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "");//put variable here 
+
+
+                    //get the record number (RecID)
+
+
+                    foreach (var item in files_checked)
+                    {
+
+                        string filenamechecked = item.ToString();
+                        foreach (string file in Files)
+                        {
+
+                            string file_name = Path.GetFileName(file);
+                            //if file == selected files from app
+                            if (file_name == filenamechecked)
+                            {
+                                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/" + file_name);
+                                request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
+                                request.Method = WebRequestMethods.Ftp.UploadFile;
+
+                                using (Stream fileStream = File.OpenRead(file))
+
+                                using (Stream ftpStream = request.GetRequestStream())
+                                {
+                                    fileStream.CopyTo(ftpStream);
+
+                                }
+                                //var processes = Process.GetProcessesByName(file);
+
+                                //foreach (var proc in Process.GetProcessesByName(file))
+                                //{
+                                //    proc.Kill();
+                                //}
+                                //delete imges after coopy
+                                if (File.Exists(file))
+                                {
+                                    File.Delete(file);
+                                }
+                            }
+
+
+
+                        }
+                    }
+                    //this.Form1_Load(null, null);
+
+                    TXT_bookNumber.Clear();
+                      TXT_Book_recive_number.Clear();
+
+                    TXT_Subject.Clear();
+                    TXT_From.Clear();
+                    TXT_To.Clear();
+                    TXT_SearchKEys.Clear();
+                    DGV_Files.ClearSelection();
+                    DGV_Files.Refresh();
+              
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //check if dgvfiles list  is empty
+
+
+
+
+
+
+
+
             //SqlDataAdapter adp = new SqlDataAdapter(cmd);
 
             //DataTable dt2 = new DataTable();
 
-     
-
-             
-            //get list of checked rows 
-            List<string> files_checked = new List<string>();
-            for (int i = 0; i < DGV_Files.Rows.Count; i++)
-            {
-                bool is_checked = (bool)DGV_Files.Rows[i].Cells[0].Value;
-                {
-                    if (is_checked == true)
-                    {
-                        //files_checked.Add(dataGridView1.Rows[i].Cells[1].ToString());
-                        files_checked.Add(DGV_Files.Rows[i].Cells[1].Value.ToString());
-                    }
-                }
-            }
-
-            //create folder with same db index id
-            var Typee = COM_bookType.SelectedText;// bring it from dropdown user chose
-            //var BookCat = "كتاب عادي";// bring it from dropdown user chose
-          
-
-
-            WebRequest request_ = WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/");
-            request_.Method = WebRequestMethods.Ftp.MakeDirectory;
-            request_.Credentials = new NetworkCredential(FTP_user, FTP_pass);
-            using (var resp = (FtpWebResponse)request_.GetResponse())
-            {
-                Console.WriteLine(resp.StatusCode);
-            }
 
 
 
-            //create array of string with all local dir files names
 
-            string[] Files = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "");//put variable here 
-
-
-            //get the record number (RecID)
-
-
-            foreach (var item in files_checked)
-            {
-
-                string filenamechecked = item.ToString();
-                foreach (string file in Files)
-                {
-
-                    string file_name = Path.GetFileName(file);
-                    //if file == selected files from app
-                    if (file_name == filenamechecked)
-                    {
-                        FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/" + file_name);
-                        request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
-                        request.Method = WebRequestMethods.Ftp.UploadFile;
-
-                        using (Stream fileStream = File.OpenRead(file))
-
-                        using (Stream ftpStream = request.GetRequestStream())
-                        {
-                            fileStream.CopyTo(ftpStream);
-
-                        }
-                        //var processes = Process.GetProcessesByName(file);
-
-                        //foreach (var proc in Process.GetProcessesByName(file))
-                        //{
-                        //    proc.Kill();
-                        //}
-                        //delete imges after coopy
-                        if (File.Exists(file))
-                        {
-                            File.Delete(file);
-                        }
-                    }
-
-
-
-                }
-            }
-            this.Form1_Load(null, null);
         }
 
         private void DGV_Files_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -441,7 +567,7 @@ SELECT  [DepartmentID]
             sd.Show();
         }
 
-       
+
 
         private void PicB_displayBOOK_Click(object sender, EventArgs e)
         {
@@ -451,7 +577,7 @@ SELECT  [DepartmentID]
 
         }
 
-       
+
 
         private void BTN_addfolder_Click(object sender, EventArgs e)
         {
@@ -461,7 +587,7 @@ SELECT  [DepartmentID]
             Refresh_Folders();
         }
 
-       
+
 
         private void BTN_DELFolder_Click(object sender, EventArgs e)
         {
@@ -485,9 +611,134 @@ SELECT  [DepartmentID]
 
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
+        //private void panel3_Paint(object sender, PaintEventArgs e)
+        //{
 
-        }
+        //}
+
+        //private void TXT_bookNumber_Validating(object sender, CancelEventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(TXT_bookNumber.Text))
+        //    {
+        //        e.Cancel = true;
+        //        TXT_bookNumber.Focus();
+        //        errorProvider1.SetError(TXT_bookNumber, "حقل فارغ");
+        //    }
+        //    else
+        //    {
+        //        e.Cancel = false;
+        //        errorProvider1.SetError(TXT_bookNumber, "");
+        //    }
+        //}
+
+        //private void BTN_Archive_Enter(object sender, EventArgs e)
+        //{
+        //    if (ValidateChildren(ValidationConstraints.Enabled))
+        //    {
+        //        MessageBox.Show(TXT_bookNumber.Text, "Demo App - Message!");
+        //    }
+        //}
+
+        //private void TXT_Book_recive_number_Validating(object sender, CancelEventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(TXT_Book_recive_number.Text))
+        //    {
+        //        e.Cancel = true;
+        //        TXT_Book_recive_number.Focus();
+        //        errorProvider1.SetError(TXT_Book_recive_number, "Name should not be left blank!");
+        //    }
+        //    else
+        //    {
+        //        e.Cancel = false;
+        //        errorProvider1.SetError(TXT_Book_recive_number, "");
+        //    }
+        //}
+
+        //private void TXT_SearchKEys_Validating(object sender, CancelEventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(TXT_SearchKEys.Text))
+        //    {
+        //        e.Cancel = true;
+        //        TXT_SearchKEys.Focus();
+        //        errorProvider1.SetError(TXT_SearchKEys, "Name should not be left blank!");
+        //    }
+        //    else
+        //    {
+        //        e.Cancel = false;
+        //        errorProvider1.SetError(TXT_SearchKEys, "");
+        //    }
+        //}
+
+        //private void TXT_Subject_TextChanged(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void TXT_Subject_Validating(object sender, CancelEventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(TXT_Subject.Text))
+        //    {
+        //        e.Cancel = true;
+        //        TXT_Subject.Focus();
+        //        errorProvider1.SetError(TXT_Subject, "Name should not be left blank!");
+        //    }
+        //    else
+        //    {
+        //        e.Cancel = false;
+        //        errorProvider1.SetError(TXT_Subject, "");
+        //    }
+        //}
+
+        //private void TXT_From_Validating(object sender, CancelEventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(TXT_From.Text))
+        //    {
+        //        e.Cancel = true;
+        //        TXT_From.Focus();
+        //        errorProvider1.SetError(TXT_From, "Name should not be left blank!");
+        //    }
+        //    else
+        //    {
+        //        e.Cancel = false;
+        //        errorProvider1.SetError(TXT_From, "");
+        //    }
+        //}
+
+        //private void TXT_To_TextChanged(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void TXT_To_Validating(object sender, CancelEventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(TXT_From.Text))
+        //    {
+        //        e.Cancel = true;
+        //        TXT_To.Focus();
+        //        errorProvider1.SetError(TXT_To, "Name should not be left blank!");
+        //    }
+        //    else
+        //    {
+        //        e.Cancel = false;
+        //        errorProvider1.SetError(TXT_To, "");
+        //    }
+        //}
+
+        //private void TXT_notes_Validating(object sender, CancelEventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(TXT_notes.Text))
+        //    {
+        //        e.Cancel = true;
+        //        TXT_notes.Focus();
+        //        errorProvider1.SetError(TXT_notes, "Name should not be left blank!");
+        //    }
+        //    else
+        //    {
+        //        e.Cancel = false;
+        //        errorProvider1.SetError(TXT_notes, "");
+        //    }
+        //}
+
+
     }
 }

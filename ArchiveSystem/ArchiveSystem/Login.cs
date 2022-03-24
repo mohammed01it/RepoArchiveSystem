@@ -19,8 +19,8 @@ namespace ArchiveSystem
             InitializeComponent();
         }
         public static string _user;
-        public static string _userID;
-        public static string _depID;
+        public static int _userID;
+        public static int _depID;
         public static string _permitionTYpeID;
         public static string _con = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         SqlConnection con = new SqlConnection(_con);
@@ -60,8 +60,8 @@ namespace ArchiveSystem
                 adp.Fill(dt);
                 if (dt.Rows.Count >0)
                 {
-                    string userID = dt.Rows[0]["UserID"].ToString();
-                    string depID = dt.Rows[0]["DepartmentID"].ToString();
+                    int userID =Convert.ToInt32( dt.Rows[0]["UserID"]);
+                    int depID = Convert.ToInt32(dt.Rows[0]["DepartmentID"]);
                      
                     string user = dt.Rows[0]["Username"].ToString();
                     string permitiontypeID = dt.Rows[0]["PermitionTypeID"].ToString();
@@ -73,8 +73,8 @@ namespace ArchiveSystem
 
                   
                        _user=user.ToString();
-                     _userID=userID.ToString();
-                    _depID = depID.ToString();
+                    _userID = userID;
+                    _depID = depID;
                     _permitionTYpeID = permitiontypeID.ToString();
 
                     Form1 f1 = new Form1();

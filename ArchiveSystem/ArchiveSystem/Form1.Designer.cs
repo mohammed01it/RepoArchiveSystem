@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -53,6 +54,7 @@
             this.BTN_DELFolder = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.Scanning_Folder = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.COM_bookStatus = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -97,7 +99,6 @@
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.Scanning_Folder = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -111,6 +112,7 @@
             this.lbl_loginDepartment = new System.Windows.Forms.Label();
             this.lbl_LoginUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel7.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -131,6 +133,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -156,8 +159,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1045, 10);
             this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
+             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -301,7 +303,7 @@
             this.DGV_Files.Size = new System.Drawing.Size(201, 257);
             this.DGV_Files.TabIndex = 0;
             this.DGV_Files.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Files_CellClick);
-            // 
+             // 
             // panel17
             // 
             this.panel17.BackColor = System.Drawing.Color.Cornsilk;
@@ -434,6 +436,19 @@
             this.button1.Text = "مسح ضؤي";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Scanning_Folder
+            // 
+            this.Scanning_Folder.BackColor = System.Drawing.Color.LightGray;
+            this.Scanning_Folder.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Scanning_Folder.Font = new System.Drawing.Font("Nirmala UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Scanning_Folder.Location = new System.Drawing.Point(0, 35);
+            this.Scanning_Folder.Name = "Scanning_Folder";
+            this.Scanning_Folder.Size = new System.Drawing.Size(201, 22);
+            this.Scanning_Folder.TabIndex = 166;
+            this.Scanning_Folder.Text = "تحديث المصدر";
+            this.Scanning_Folder.UseVisualStyleBackColor = false;
+            this.Scanning_Folder.Click += new System.EventHandler(this.Scanning_Folder_Click);
             // 
             // panel12
             // 
@@ -597,7 +612,7 @@
             this.BTN_Archive.Text = "ارشفة";
             this.BTN_Archive.UseVisualStyleBackColor = false;
             this.BTN_Archive.Click += new System.EventHandler(this.BTN_Archive_Click);
-            // 
+             // 
             // TXT_SearchKEys
             // 
             this.TXT_SearchKEys.Location = new System.Drawing.Point(384, 308);
@@ -605,7 +620,7 @@
             this.TXT_SearchKEys.Name = "TXT_SearchKEys";
             this.TXT_SearchKEys.Size = new System.Drawing.Size(326, 79);
             this.TXT_SearchKEys.TabIndex = 13;
-            // 
+             // 
             // TXT_bookNumber
             // 
             this.TXT_bookNumber.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -614,8 +629,8 @@
             this.TXT_bookNumber.Name = "TXT_bookNumber";
             this.TXT_bookNumber.Size = new System.Drawing.Size(136, 26);
             this.TXT_bookNumber.TabIndex = 1;
-            // 
-            // label7
+             // 
+            // label7a  a
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
@@ -666,7 +681,7 @@
             this.TXT_notes.Name = "TXT_notes";
             this.TXT_notes.Size = new System.Drawing.Size(268, 67);
             this.TXT_notes.TabIndex = 15;
-            // 
+             // 
             // label10
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -730,7 +745,7 @@
             this.TXT_To.Name = "TXT_To";
             this.TXT_To.Size = new System.Drawing.Size(268, 26);
             this.TXT_To.TabIndex = 7;
-            // 
+             // 
             // label14
             // 
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -750,7 +765,7 @@
             this.TXT_From.Name = "TXT_From";
             this.TXT_From.Size = new System.Drawing.Size(268, 26);
             this.TXT_From.TabIndex = 6;
-            // 
+             // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -769,7 +784,7 @@
             this.TXT_Subject.Name = "TXT_Subject";
             this.TXT_Subject.Size = new System.Drawing.Size(268, 26);
             this.TXT_Subject.TabIndex = 5;
-            // 
+             // 
             // label17
             // 
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -799,7 +814,7 @@
             this.TXT_Book_recive_number.Name = "TXT_Book_recive_number";
             this.TXT_Book_recive_number.Size = new System.Drawing.Size(136, 26);
             this.TXT_Book_recive_number.TabIndex = 3;
-            // 
+             // 
             // panel10
             // 
             this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -944,19 +959,6 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // Scanning_Folder
-            // 
-            this.Scanning_Folder.BackColor = System.Drawing.Color.LightGray;
-            this.Scanning_Folder.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Scanning_Folder.Font = new System.Drawing.Font("Nirmala UI Semilight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scanning_Folder.Location = new System.Drawing.Point(0, 35);
-            this.Scanning_Folder.Name = "Scanning_Folder";
-            this.Scanning_Folder.Size = new System.Drawing.Size(201, 22);
-            this.Scanning_Folder.TabIndex = 166;
-            this.Scanning_Folder.Text = "تحديث المصدر";
-            this.Scanning_Folder.UseVisualStyleBackColor = false;
-            this.Scanning_Folder.Click += new System.EventHandler(this.Scanning_Folder_Click);
-            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(40, 204);
@@ -1088,10 +1090,14 @@
             this.pictureBox1.Image = global::ArchiveSystem.Properties.Resources.z;
             this.pictureBox1.Location = new System.Drawing.Point(-24, 26);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(151, 79);
+            this.pictureBox1.Size = new System.Drawing.Size(141, 73);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Form1
             // 
@@ -1136,6 +1142,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1228,6 +1235,7 @@
         private System.Windows.Forms.Label LBL_USERNAME;
         private System.Windows.Forms.ComboBox COM_bookStatus;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

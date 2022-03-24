@@ -34,7 +34,7 @@ namespace ArchiveSystem.Folder_view_data
 
             adapter = new SqlDataAdapter(@"SELECT
 
-dbo.ArchiveBooks_TBL.BookCode as [كود الكتاب],
+
 dbo.ArchiveBooks_TBL.BookNumber as [رقم الكتاب],
 dbo.ArchiveBooks_TBL.BookDate as [تاريخ الكتاب],
 dbo.ArchiveBooks_TBL.InboundNumber as [رقم واردنا],
@@ -43,17 +43,15 @@ dbo.ArchiveBooks_TBL.Subject as [موضوع الكتاب],
 dbo.ArchiveBooks_TBL.BooksTypeID as [النوع(الكابينة)],
 dbo.ArchiveBooks_TBL.[From] as [من],
 dbo.ArchiveBooks_TBL.[To] as [الى],
-dbo.ArchiveBooks_TBL.SearchKeysID as [مفاتيح البحث],
+dbo.ArchiveBooks_TBL.SearchKeys as [مفاتيح البحث],
 dbo.ArchiveBooks_TBL.BookPriority as [الاولوية],
 dbo.ArchiveBooks_TBL.ArchivedDate as [تاريخ الارشفة],
 dbo.ArchiveBooks_TBL.BookPaperType as [نوع النسخة],
 dbo.ArchiveBooks_TBL.Notes as [الملاحظات],
-dbo.ArchiveBooks_TBL.BookCatID as [BookCatID],
 dbo.ArchiveBooks_TBL.DepartmentID_archivedBy as [القسم],
 dbo.ArchiveBooks_TBL.UserID_archivedBy as [المستخدم],
 dbo.ArchiveBooks_TBL.BookStatus as [حالة الكتاب],
 dbo.ArchiveBooks_TBL.Privacy as [الخصوصية]
-
 
 
 FROM ArchiveBooks_TBL
@@ -64,7 +62,7 @@ FROM ArchiveBooks_TBL
             dt.Clear();
 
             adapter.Fill(dt);
-            dgv_view_data_doc.DataSource = dt;
+            advanc_dgv_view_data_doc.DataSource = dt;
             Label2_count_doc.Text = Convert.ToString(BindingContext[dt].Count);
             Label2_count_doc_search.Text = Convert.ToString(BindingContext[dt].Count);
         }
@@ -75,16 +73,16 @@ FROM ArchiveBooks_TBL
 
             fill_dgv_view_data_doc();
 
-            for (int i = 0; i < dgv_view_data_doc.Columns.Count - 1; i++)
-               {
-                dgv_view_data_doc.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
-               }
+            //for (int i = 0; i < advanc_dgv_view_data_doc.Columns.Count - 1; i++)
+            //   {
+            //    advanc_dgv_view_data_doc.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
+            //   }
 
-           
 
-            dgv_view_data_doc.Columns[0].HeaderCell.Style.BackColor = Color.DeepSkyBlue;
+
+            advanc_dgv_view_data_doc.Columns[0].HeaderCell.Style.BackColor = Color.DeepSkyBlue;
            
-            dgv_view_data_doc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 11);
+            advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 11);
 
         }
 
@@ -99,8 +97,8 @@ FROM ArchiveBooks_TBL
                 {
                   DataView dv = dt.DefaultView;
 
-                 dv.RowFilter = "[" + dgv_view_data_doc.Columns[col_index_select].Name + "]+[كود الكتاب]  Like '%" + txt_seach.Text + "%'";
-                  this.dgv_view_data_doc.DataSource = dv;
+                 dv.RowFilter = "[" + advanc_dgv_view_data_doc.Columns[col_index_select].Name + "]+[كود الكتاب]  Like '%" + txt_seach.Text + "%'";
+                  this.advanc_dgv_view_data_doc.DataSource = dv;
                 Label2_count_doc_search.Text = Convert.ToString(BindingContext[dt].Count);
             }
             catch (Exception ex)
@@ -112,29 +110,36 @@ FROM ArchiveBooks_TBL
         }
 
         int col_index_select = 1;
-        private void dgv_view_data_doc_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void advanc_dgv_view_data_doc_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            txt_seach.Clear();
+ txt_seach.Clear();
 
             col_index_select = e.ColumnIndex;
 
-            for(int i = 0; i < dgv_view_data_doc.Columns.Count - 1; i++)
+            for(int i = 0; i < advanc_dgv_view_data_doc.Columns.Count - 1; i++)
                {
-                
-                dgv_view_data_doc.Columns[i].HeaderCell.Style.BackColor = Color.LightGray;
 
-                dgv_view_data_doc.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.DeepSkyBlue;
+                advanc_dgv_view_data_doc.Columns[i].HeaderCell.Style.BackColor = Color.LightGray;
+
+                advanc_dgv_view_data_doc.Columns[e.ColumnIndex].HeaderCell.Style.BackColor = Color.DeepSkyBlue;
 
             }
             txt_seach.Select();
         }
+       
 
         private void NumericUpDown_font_size_ValueChanged(object sender, EventArgs e)
         {
 
-            //dgv_view_data_doc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", NumericUpDown_font_size.Value + 2);
-
-            //dgv_view_data_doc.DefaultCellStyle.Font = new Font("Tahoma", NumericUpDown_font_size.Value);
+            this.advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", Convert.ToInt32(NumericUpDown_font_size.Value) + 1);
+            this.advanc_dgv_view_data_doc.DefaultCellStyle.Font = new Font("Tahoma", Convert.ToInt32( NumericUpDown_font_size.Value));
+            
         }
+        private void advanc_dgv_view_data_doc_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            Label2_count_doc_search.Text = Convert.ToString(advanc_dgv_view_data_doc.RowCount);
+        }
+     
+
     }
 }

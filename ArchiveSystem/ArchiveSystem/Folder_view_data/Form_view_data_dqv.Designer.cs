@@ -69,12 +69,12 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_view_data_doc.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_view_data_doc.EnableHeadersVisualStyles = false;
-            this.dgv_view_data_doc.Location = new System.Drawing.Point(2, 50);
+            this.dgv_view_data_doc.Location = new System.Drawing.Point(2, 484);
             this.dgv_view_data_doc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_view_data_doc.Name = "dgv_view_data_doc";
             this.dgv_view_data_doc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgv_view_data_doc.RowTemplate.Height = 26;
-            this.dgv_view_data_doc.Size = new System.Drawing.Size(1498, 898);
+            this.dgv_view_data_doc.Size = new System.Drawing.Size(1498, 330);
             this.dgv_view_data_doc.TabIndex = 3;
             this.dgv_view_data_doc.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_view_data_doc_ColumnHeaderMouseClick);
             // 

@@ -27,7 +27,7 @@ namespace ArchiveSystem.Folder_view_data
         DataTable dt = new DataTable();
             SqlDataAdapter adapter;
 
-        void fill_dgv_view_data_employes()
+        void fill_dgv_view_data_doc()
         {
            
 
@@ -73,7 +73,7 @@ FROM ArchiveBooks_TBL
         private void Form_view_data_dqv_Load(object sender, EventArgs e)
         {
 
-            fill_dgv_view_data_employes();
+            fill_dgv_view_data_doc();
 
             for (int i = 0; i < dgv_view_data_doc.Columns.Count - 1; i++)
                {

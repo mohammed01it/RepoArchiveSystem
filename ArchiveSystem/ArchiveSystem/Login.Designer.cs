@@ -99,6 +99,7 @@
             // 
             // panel8
             // 
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
             this.panel8.Controls.Add(this.label3);
             this.panel8.Controls.Add(this.TXT_pass);
             this.panel8.Controls.Add(this.pictureBox1);
@@ -115,10 +116,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(56, 25);
+            this.label3.Location = new System.Drawing.Point(51, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(217, 25);
             this.label3.TabIndex = 16;
@@ -126,15 +128,19 @@
             // 
             // TXT_pass
             // 
+            this.TXT_pass.AllowDrop = true;
             this.TXT_pass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_pass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TXT_pass.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TXT_pass.Location = new System.Drawing.Point(368, 120);
-            this.TXT_pass.Multiline = true;
             this.TXT_pass.Name = "TXT_pass";
+            this.TXT_pass.PasswordChar = '*';
             this.TXT_pass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TXT_pass.Size = new System.Drawing.Size(271, 33);
+            this.TXT_pass.Size = new System.Drawing.Size(271, 28);
             this.TXT_pass.TabIndex = 11;
             this.TXT_pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TXT_pass.UseSystemPasswordChar = true;
+            this.TXT_pass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXT_pass_KeyDown);
             // 
             // pictureBox1
             // 
@@ -173,25 +179,26 @@
             // TXT_User
             // 
             this.TXT_User.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_User.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TXT_User.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TXT_User.Location = new System.Drawing.Point(366, 52);
-            this.TXT_User.Multiline = true;
             this.TXT_User.Name = "TXT_User";
             this.TXT_User.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TXT_User.Size = new System.Drawing.Size(273, 33);
+            this.TXT_User.Size = new System.Drawing.Size(273, 28);
             this.TXT_User.TabIndex = 10;
             this.TXT_User.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // BTN_Login
             // 
             this.BTN_Login.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BTN_Login.BackColor = System.Drawing.Color.White;
             this.BTN_Login.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_Login.Location = new System.Drawing.Point(524, 177);
             this.BTN_Login.Name = "BTN_Login";
             this.BTN_Login.Size = new System.Drawing.Size(115, 38);
             this.BTN_Login.TabIndex = 14;
             this.BTN_Login.Text = "تسجيل الدخول";
-            this.BTN_Login.UseVisualStyleBackColor = true;
+            this.BTN_Login.UseVisualStyleBackColor = false;
             this.BTN_Login.Click += new System.EventHandler(this.BTN_Login_Click);
             this.BTN_Login.Enter += new System.EventHandler(this.BTN_Login_Click);
             // 
@@ -225,6 +232,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.KeyPreview = true;
             this.Name = "Login";
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "تسجيل الدخول";

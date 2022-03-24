@@ -96,7 +96,40 @@ namespace ArchiveSystem
                 MessageBox.Show(ex.ToString());
             }
         }
-       void callLogin_info()
+        void Select_Departments()
+        {
+            try
+            {
+                string query = string.Format(@"  
+SELECT  [DepartmentID]
+      ,[DepartmentName]
+  FROM [ArchiveSystem].[dbo].[Departments_TBL]", con);
+
+
+
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataTable dep = new DataTable();
+
+                adp.Fill(dep);
+                COMLIST_assination.DataSource = dep;
+                COMLIST_assination.DisplayMember = "DepartmentName";
+                COMLIST_assination.ValueMember = "DepartmentID";
+
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        void callLogin_info()
         {
             LBL_USERNAME.Text = Login._user;
 
@@ -127,9 +160,12 @@ namespace ArchiveSystem
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-       
-            
+
             //--------------moh------------------
+            COM_bookStatus.SelectedIndex = 0;
+            COM_PaperType.SelectedIndex = 0;
+            COM_priority.SelectedIndex = 0;
+            COM_privicy.SelectedIndex = 0;
             Doc_source = Properties.Settings.Default.DOC_Source.ToString(); // doc source
             metroTabControl1.RightToLeft = RightToLeft.Yes;
             metroTabControl1.RightToLeftLayout = true;
@@ -137,6 +173,7 @@ namespace ArchiveSystem
             Refresh_Folders();
             Fill_bookType();
             callLogin_info();
+            Select_Departments();
             //--------------end------------------
 
 
@@ -260,20 +297,36 @@ namespace ArchiveSystem
             con.Open();
             SqlCommand cmd = new SqlCommand(query, con);
             int Book_id = (int)cmd.ExecuteScalar();
-
+            con.Close();
             
             if (Book_id != 0)
             {
                 // for loop on list of dep and make query to insert in assign table 
+                foreach (Object item in COMLIST_assination.CheckedItems)
+                {
+                    DataRowView drv = item as DataRowView;
+                    int id = Convert.ToInt16(drv["DepartmentID"]);
+                    string asssignQuery = string.Format(@" INSERT INTO [dbo].[Assign&Comment_TBL]
+           ([ArchiveBookID]
+           ,[DepartmentID]
+           ,[Comment])
+     VALUES
+           ( {0},{1},N'{2}')",Book_id,id,"", con);
+                     
+                    con.Open();
+                    SqlCommand cmd2 = new SqlCommand(asssignQuery, con);
 
+                    cmd2.ExecuteNonQuery();
+                    
+                    con.Close();
+                }
 
             }
             //SqlDataAdapter adp = new SqlDataAdapter(cmd);
 
             //DataTable dt2 = new DataTable();
 
-            //adp.Fill(dt2);
-            con.Close();
+     
 
              
             //get list of checked rows 

@@ -334,7 +334,7 @@ SELECT  [DepartmentID]
                 {
                     if (string.IsNullOrWhiteSpace(item.Text))
                     {
-                        item.BackColor = Color.LightPink;
+                        item.BackColor = Color.LightSalmon;
                     }
                 }   
  
@@ -482,15 +482,30 @@ SELECT  [DepartmentID]
                     //this.Form1_Load(null, null);
 
                     TXT_bookNumber.Clear();
-                      TXT_Book_recive_number.Clear();
-
+                    TXT_Book_recive_number.Clear();
                     TXT_Subject.Clear();
                     TXT_From.Clear();
                     TXT_To.Clear();
                     TXT_SearchKEys.Clear();
-                    DGV_Files.ClearSelection();
-                    DGV_Files.Refresh();
-              
+                    TXT_notes.Clear();
+                COM_bookStatus.SelectedIndex = 0;
+                COM_PaperType.SelectedIndex=0;
+                COM_priority.SelectedIndex=0;
+                COM_privicy.SelectedIndex=0;
+                COM_bookType.SelectedIndex=0;
+                 DT_bookDate.TabIndex=0;
+                DT_bookDate.Value = DateTime.Now;
+                DT_bookRecive_date.Value = DateTime.Now;
+
+                if (PicB_displayBOOK.Image != null)
+                {
+                    PicB_displayBOOK.Image.Dispose();
+                    PicB_displayBOOK.Image = null;
+                }
+                
+                DGV_Files.Rows.Clear();
+
+ 
             }
 
 

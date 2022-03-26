@@ -9,7 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
+using System.Net;
 
 namespace ArchiveSystem.Folder_view_data
 {
@@ -69,7 +70,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             adapter.Fill(dt);
             advanc_dgv_view_data_doc.DataSource = dt;
             Label2_count_doc.Text = Convert.ToString(BindingContext[dt].Count);
-            Label2_count_doc_search.Text = Convert.ToString(BindingContext[dt].Count);
+           
         }
 
 
@@ -104,7 +105,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
                  dv.RowFilter = "[" + advanc_dgv_view_data_doc.Columns[col_index_select].Name + "]+[كود الكتاب]  Like '%" + txt_seach.Text + "%'";
                   this.advanc_dgv_view_data_doc.DataSource = dv;
-                Label2_count_doc_search.Text = Convert.ToString(BindingContext[dt].Count);
+               
             }
             catch (Exception ex)
             {
@@ -117,7 +118,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
         int col_index_select = 1;
         private void advanc_dgv_view_data_doc_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
- txt_seach.Clear();
+            txt_seach.Clear();
 
             col_index_select = e.ColumnIndex;
 
@@ -140,11 +141,134 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             this.advanc_dgv_view_data_doc.DefaultCellStyle.Font = new Font("Tahoma", Convert.ToInt32( NumericUpDown_font_size.Value));
             
         }
+
         private void advanc_dgv_view_data_doc_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             Label2_count_doc_search.Text = Convert.ToString(advanc_dgv_view_data_doc.RowCount);
         }
-     
 
+
+        /////////Code to read and download FTP files from the server/////////////
+        //Read FTP File
+
+        string ftp_server_Ip = ConfigurationManager.AppSettings["FTP_Server_Ip"];
+        string ftp_server_username = ConfigurationManager.AppSettings["FTP_Server_user"];
+        string ftp_server_password = ConfigurationManager.AppSettings["FTP_Server_pass"];
+
+        string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
+
+        public string[] GetFileList()
+        {
+         
+
+            string[] downloadFiles;
+            StringBuilder result = new StringBuilder();
+            FtpWebRequest reqFTP;
+            try
+            {
+                //                                          Here we put the path IP and of the FTP file server
+                //reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"wared\cjs2\"));
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"\"+ advanc_dgv_view_data_doc.CurrentRow.Cells[6].Value.ToString() + @"\" + advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString() + @"\"));
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(ftp_server_username, ftp_server_password);
+                reqFTP.Method = WebRequestMethods.Ftp.ListDirectory;
+                WebResponse response = reqFTP.GetResponse();
+                StreamReader reader = new StreamReader(response.GetResponseStream());
+                string line = reader.ReadLine();
+                while (line != null)
+                {
+                    result.Append(line);
+                    result.Append("\n");
+                    line = reader.ReadLine();
+                }
+                // to remove the trailing '\n'
+                result.Remove(result.ToString().LastIndexOf('\n'), 1);
+                reader.Close();
+                response.Close();
+                return result.ToString().Split('\n');
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+                downloadFiles = null;
+                return downloadFiles;
+            }
+        }
+
+        //Download FTP Files
+        private void Download(string fileName)
+        {
+
+            FtpWebRequest reqFTP;
+            try
+            {
+
+                //filePath = <<The full path where the file is to be created. the>>,
+                //fileName = <<Name of the file to be createdNeed not name on FTP server. name name()>>
+                FileStream outputStream = new FileStream(path_folder_client_temp + "\\" + fileName, FileMode.Create);
+                //                                           Here we put the path IP, and file name of the FTP file server
+                //reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"wared\cjs2\" + fileName)); 
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(ftp_server_Ip + @"\" + advanc_dgv_view_data_doc.CurrentRow.Cells[6].Value.ToString() + @"\" + advanc_dgv_view_data_doc.CurrentRow.Cells[0].Value.ToString() + @"\" + fileName));
+                reqFTP.Method = WebRequestMethods.Ftp.DownloadFile;
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential(ftp_server_username, ftp_server_password);
+                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                Stream ftpStream = response.GetResponseStream();
+                long cl = response.ContentLength;
+                int bufferSize = 2048;
+                int readCount;
+                byte[] buffer = new byte[bufferSize];
+                readCount = ftpStream.Read(buffer, 0, bufferSize);
+                while (readCount > 0)
+                {
+                    outputStream.Write(buffer, 0, readCount);
+                    readCount = ftpStream.Read(buffer, 0, bufferSize);
+                }
+                ftpStream.Close();
+                outputStream.Close();
+                response.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        //Event Double Click DGV
+        private void advanc_dgv_view_data_doc_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                string[] files = GetFileList();
+
+                System.IO.DirectoryInfo di = new DirectoryInfo(path_folder_client_temp);
+
+                foreach (FileInfo file in di.GetFiles())
+                {
+                    file.Delete();
+                }
+
+
+                foreach (string file in files)
+                {
+                    Download(file);
+                }
+
+
+
+
+
+                var path = string.Format(path_folder_client_temp);
+
+
+                System.Diagnostics.Process.Start(path);
+
+            }
+            catch (WebException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        //-----------------END------------------------
     }
 }

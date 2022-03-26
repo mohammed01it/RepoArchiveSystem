@@ -417,7 +417,7 @@ SELECT  [DepartmentID]
                
 
                
-                    //create folder with same db index id
+                    //create folder FTP with same db index id
                     var Typee = COM_bookType.Text;// bring it from dropdown user chose
                                                           //var BookCat = "كتاب عادي";// bring it from dropdown user chose
 

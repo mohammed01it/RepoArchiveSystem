@@ -61,7 +61,7 @@ namespace ArchiveSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("الرجاء اختيار مصدر الفايلات");
             }
         }
         void Fill_bookType()
@@ -187,7 +187,6 @@ SELECT  [DepartmentID]
             new_tab.Dock = DockStyle.Fill;
             int x = metroTabControl1.TabCount;
             t.Text = "الارشيف العام";// + x
-            metroTabControl1.SelectTab(1);
             //metroTabControl1.SelectTab(x - 1);
             //---------------end-----------------
 
@@ -199,6 +198,7 @@ SELECT  [DepartmentID]
 
         private void DGV_Folders_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+         
 
             String folderName = DGV_Folders.Rows[e.RowIndex].Cells[0].Value.ToString();
             selectedFolder = folderName;
@@ -504,8 +504,7 @@ SELECT  [DepartmentID]
                     PicB_displayBOOK.Image = null;
                 }
                 
-                DGV_Files.Rows.Clear();
-
+ 
  
             }
 
@@ -616,14 +615,30 @@ SELECT  [DepartmentID]
 
         private void Scanning_Folder_Click(object sender, EventArgs e)
         {
+            //if (Folder_Brows_DOC_Source.ShowDialog() == true)
+            //{
+            //    string fileName = openFileDialog.FileName;
+            //    if (!string.IsNullOrEmpty(fileName) && File.Exists(fileName))
+            //    {
+            //        spamText.Text = File.ReadAllText(fileName);
+            //        Splitter(new[] { fileName });
+            //    }
+            //}
+            try
+            {
+                Folder_Brows_DOC_Source.ShowDialog();
+                string Doc_source = Folder_Brows_DOC_Source.SelectedPath;
 
-            Folder_Brows_DOC_Source.ShowDialog();
-            string Doc_source = Folder_Brows_DOC_Source.SelectedPath;
+                Properties.Settings.Default.DOC_Source = Doc_source;
 
-            Properties.Settings.Default.DOC_Source = Doc_source;
-
-            Properties.Settings.Default.Save();
-            this.Form1_Load(null, null);
+                Properties.Settings.Default.Save();
+                this.Form1_Load(null, null);
+            }
+            catch 
+            {
+                MessageBox.Show("الرجاء اختيار مصدر الملفات");
+            }
+           
 
         }
 

@@ -69,7 +69,11 @@ namespace ArchiveSystem
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 MessageBox.Show("الرجاء اختيار مصدر الفايلات");
+=======
+                MessageBox.Show("الرجاء اختيار مصدر الملفات");
+>>>>>>> Stashed changes
 =======
                 MessageBox.Show("الرجاء اختيار مصدر الملفات");
 >>>>>>> Stashed changes
@@ -213,7 +217,11 @@ SELECT  [DepartmentID]
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             //metroTabControl1.SelectTab(x - 1);
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -237,6 +245,7 @@ SELECT  [DepartmentID]
         private void DGV_Folders_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
          
+
 
 
 
@@ -463,10 +472,13 @@ SELECT  [DepartmentID]
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                
                     //create folder FTP with same db index id
                     var Typee = COM_bookType.Text;// bring it from dropdown user chose
                                                           //var BookCat = "كتاب عادي";// bring it from dropdown user chose
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -483,9 +495,13 @@ SELECT  [DepartmentID]
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 =======
 
+=======
+
+>>>>>>> Stashed changes
 
 
                 WebRequest request_ = WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/");
@@ -495,6 +511,9 @@ SELECT  [DepartmentID]
                 {
                     Console.WriteLine(resp.StatusCode);
                 }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 
@@ -506,6 +525,7 @@ SELECT  [DepartmentID]
                     Console.WriteLine(resp.StatusCode);
                 }
 
+<<<<<<< Updated upstream
 =======
 
 =======
@@ -587,6 +607,19 @@ SELECT  [DepartmentID]
 
 >>>>>>> Stashed changes
 =======
+                foreach (var item in files_checked)
+                { 
+
+>>>>>>> Stashed changes
+=======
+                //create array of string with all local dir files names
+
+                string[] Files = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "");//put variable here 
+
+
+                //get the record number (RecID)
+
+
                 foreach (var item in files_checked)
                 { 
 
@@ -606,9 +639,15 @@ SELECT  [DepartmentID]
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
                             using (Stream fileStream = File.OpenRead(file))
 
+=======
+
+                            using (Stream fileStream = File.OpenRead(file))
+
+>>>>>>> Stashed changes
 =======
 
                             using (Stream fileStream = File.OpenRead(file))
@@ -637,9 +676,15 @@ SELECT  [DepartmentID]
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 
 
+=======
+
+
+
+>>>>>>> Stashed changes
 =======
 
 
@@ -696,10 +741,13 @@ SELECT  [DepartmentID]
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 
  
  
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -752,6 +800,9 @@ SELECT  [DepartmentID]
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -888,6 +939,9 @@ SELECT  [DepartmentID]
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -896,6 +950,7 @@ SELECT  [DepartmentID]
                 Properties.Settings.Default.Save();
                 this.Form1_Load(null, null);
             }
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             catch 
             {
@@ -918,11 +973,16 @@ SELECT  [DepartmentID]
 
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
             catch
             {
                 MessageBox.Show("الرجاء اختيار مصدر الملفات");
             }
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -947,6 +1007,7 @@ SELECT  [DepartmentID]
             for (int i = 0; i < Files.Length; i++)
             {
                 FileInfo file = new FileInfo(Files[i]);
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 
                 table.Rows.Add(false, file.Name);
@@ -1037,6 +1098,16 @@ SELECT  [DepartmentID]
             for (int i = 0; i < Files.Length; i++)
             {
                 FileInfo file = new FileInfo(Files[i]);
+
+                table.Rows.Add(false, file.Name);
+
+
+            }
+
+            DGV_Files.DataSource = table;
+
+>>>>>>> Stashed changes
+=======
 
                 table.Rows.Add(false, file.Name);
 

@@ -146,6 +146,26 @@ namespace ArchiveSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_refresh_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-refresh-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_refresh_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-refresh-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap istockphoto_1040250650_612x612 {
             get {
                 object obj = ResourceManager.GetObject("istockphoto-1040250650-612x612", resourceCulture);
@@ -170,6 +190,16 @@ namespace ArchiveSystem.Properties {
         internal static System.Drawing.Bitmap page_header_web_banner_header_e57b9dba7aad383d17c45d66d35b3bf0 {
             get {
                 object obj = ResourceManager.GetObject("page-header-web-banner-header-e57b9dba7aad383d17c45d66d35b3bf0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Refresh_icon {
+            get {
+                object obj = ResourceManager.GetObject("Refresh_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

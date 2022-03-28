@@ -30,7 +30,8 @@ namespace ArchiveSystem
         public string selectedFolder = "";
         public string picture_path = "";
         public string Doc_source = "";
-
+        
+         
         string FTP_ip = ConfigurationSettings.AppSettings["FTP_Path"];
         string FTP_user = ConfigurationSettings.AppSettings["FTP_user"];
         string FTP_pass = ConfigurationSettings.AppSettings["FTP_pass"];
@@ -42,10 +43,12 @@ namespace ArchiveSystem
 
 
 
-        void Refresh_Folders()
+      public  void Refresh_Folders()
         {
             try
             {
+                Doc_source = Properties.Settings.Default.DOC_Source.ToString(); // doc source
+
                 string[] folders = Directory.GetDirectories(Doc_source);
                 DataTable folderDT = new DataTable();
 
@@ -56,12 +59,17 @@ namespace ArchiveSystem
                     FileInfo folder = new FileInfo(folders[i]);
                     folderDT.Rows.Add(folder.Name);
                 }
+                DGV_Folders.DataSource = null;
                 DGV_Folders.DataSource = folderDT;
-
+              
             }
-            catch (Exception ex)
+            catch
             {
+<<<<<<< Updated upstream
                 MessageBox.Show("الرجاء اختيار مصدر الفايلات");
+=======
+                MessageBox.Show("الرجاء اختيار مصدر الملفات");
+>>>>>>> Stashed changes
             }
         }
         void Fill_bookType()
@@ -160,8 +168,9 @@ SELECT  [DepartmentID]
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            metroTabControl1.SelectTab(0);
             //--------------moh------------------
+           
             COM_bookStatus.SelectedIndex = 0;
             COM_PaperType.SelectedIndex = 0;
             COM_priority.SelectedIndex = 0;
@@ -178,6 +187,7 @@ SELECT  [DepartmentID]
 
 
             //--------------shukri-----------------------
+
             Form_view_data_dqv new_tab = new Form_view_data_dqv();
             TabPage t = new TabPage();
             new_tab.TopLevel = false;
@@ -187,7 +197,11 @@ SELECT  [DepartmentID]
             new_tab.Dock = DockStyle.Fill;
             int x = metroTabControl1.TabCount;
             t.Text = "الارشيف العام";// + x
+<<<<<<< Updated upstream
             //metroTabControl1.SelectTab(x - 1);
+=======
+
+>>>>>>> Stashed changes
             //---------------end-----------------
 
 
@@ -199,6 +213,7 @@ SELECT  [DepartmentID]
         private void DGV_Folders_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
          
+
 
             String folderName = DGV_Folders.Rows[e.RowIndex].Cells[0].Value.ToString();
             selectedFolder = folderName;
@@ -260,18 +275,19 @@ SELECT  [DepartmentID]
             int ran = rand.Next(100000, 999999);
 
             string datenow = DateTime.Now.ToString("hhmmss");
+            string currentDate = DateTime.Now.ToString("yyyy:MM:dd");
 
             string book_code = TXT_Subject.Text + ran.ToString() + datenow;
             int departmentID = Login._depID;
             int userid = Login._userID;
             string InboundDate = DT_bookRecive_date.Text;
-            
+
             //check if fields are empty
 
 
             string BookNumber = TXT_bookNumber.Text;
             string InboundNumber = TXT_Book_recive_number.Text;
-           
+
             string Subject = TXT_Subject.Text;
             string From = TXT_From.Text;
             string To = TXT_To.Text;
@@ -291,7 +307,7 @@ SELECT  [DepartmentID]
                     }
                 }
             }
-            if (string.IsNullOrWhiteSpace(BookNumber) || string.IsNullOrWhiteSpace(InboundNumber)   || string.IsNullOrWhiteSpace(Subject) || string.IsNullOrWhiteSpace(From) || string.IsNullOrWhiteSpace(To) || string.IsNullOrWhiteSpace(SearchKeys))
+            if (string.IsNullOrWhiteSpace(BookNumber) || string.IsNullOrWhiteSpace(InboundNumber) || string.IsNullOrWhiteSpace(Subject) || string.IsNullOrWhiteSpace(From) || string.IsNullOrWhiteSpace(To) || string.IsNullOrWhiteSpace(SearchKeys))
             {
                 List<TextBox> boxes = new List<TextBox>();
                 if (string.IsNullOrWhiteSpace(TXT_bookNumber.Text))
@@ -330,26 +346,27 @@ SELECT  [DepartmentID]
                 {
                     //highlightTextBox = txtPostCode;
                     boxes.Add(TXT_SearchKEys);
-                } else { TXT_SearchKEys.BackColor = Color.White; }
+                }
+                else { TXT_SearchKEys.BackColor = Color.White; }
                 foreach (var item in boxes)
                 {
                     if (string.IsNullOrWhiteSpace(item.Text))
                     {
                         item.BackColor = Color.LightSalmon;
                     }
-                }   
- 
+                }
+
                 MessageBox.Show("الرجاء مليء جميع الحقول");
-           
+
 
 
             }
 
-            else if (  files_checked.Count <= 0)
+            else if (files_checked.Count <= 0)
             {
                 MessageBox.Show("الرجاء اختيار صورة المستند");
             }
-          
+
 
 
 
@@ -380,7 +397,7 @@ SELECT  [DepartmentID]
             ) output INSERTED.ArchiveBookID
      VALUES
            (N'{0}','{1}','{2}','{3}','{4}',N'{5}',{6},N'{7}',N'{8}',N'{9}','{10}',N'{11}',N'{12}',{13},{14},N'{15}',N'{16}',N'{17}')
-", book_code, BookNumber, DT_bookDate.Text, InboundNumber, InboundDate, Subject, COM_bookType.SelectedValue, From, To, COM_priority.Text, datenow, COM_PaperType.Text, TXT_notes.Text, departmentID, userid, COM_bookStatus.Text, COM_privicy.Text, SearchKeys, con);
+", book_code, BookNumber, DT_bookDate.Text, InboundNumber, InboundDate, Subject, COM_bookType.SelectedValue, From, To, COM_priority.Text, currentDate, COM_PaperType.Text, TXT_notes.Text, departmentID, userid, COM_bookStatus.Text, COM_privicy.Text, SearchKeys, con);
 
 
 
@@ -414,87 +431,100 @@ SELECT  [DepartmentID]
 
                 }
 
-               
 
+<<<<<<< Updated upstream
                
                     //create folder FTP with same db index id
                     var Typee = COM_bookType.Text;// bring it from dropdown user chose
                                                           //var BookCat = "كتاب عادي";// bring it from dropdown user chose
+=======
+>>>>>>> Stashed changes
+
+
+                //create folder with same db index id
+                var Typee = COM_bookType.Text;// bring it from dropdown user chose
+                                              //var BookCat = "كتاب عادي";// bring it from dropdown user chose
 
 
 
-                    WebRequest request_ = WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/");
-                    request_.Method = WebRequestMethods.Ftp.MakeDirectory;
-                    request_.Credentials = new NetworkCredential(FTP_user, FTP_pass);
-                    using (var resp = (FtpWebResponse)request_.GetResponse())
+                WebRequest request_ = WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/");
+                request_.Method = WebRequestMethods.Ftp.MakeDirectory;
+                request_.Credentials = new NetworkCredential(FTP_user, FTP_pass);
+                using (var resp = (FtpWebResponse)request_.GetResponse())
+                {
+                    Console.WriteLine(resp.StatusCode);
+                }
+
+
+
+                //create array of string with all local dir files names
+
+                string[] Files = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "");//put variable here 
+
+
+                //get the record number (RecID)
+
+
+                foreach (var item in files_checked)
+                { 
+
+                    string filenamechecked = item.ToString();
+                    foreach (string file in Files)
                     {
-                        Console.WriteLine(resp.StatusCode);
-                    }
 
-
-
-                    //create array of string with all local dir files names
-
-                    string[] Files = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "");//put variable here 
-
-
-                    //get the record number (RecID)
-
-
-                    foreach (var item in files_checked)
-                    {
-
-                        string filenamechecked = item.ToString();
-                        foreach (string file in Files)
+                        string file_name = Path.GetFileName(file);
+                        //if file == selected files from app
+                        if (file_name == filenamechecked)
                         {
+                            string fn = subject + file_name;
+                            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/" + fn);
+                            request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
+                            request.Method = WebRequestMethods.Ftp.UploadFile;
 
-                            string file_name = Path.GetFileName(file);
-                            //if file == selected files from app
-                            if (file_name == filenamechecked)
+                            using (Stream fileStream = File.OpenRead(file))
+
+                            using (Stream ftpStream = request.GetRequestStream())
                             {
-                                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/" + file_name);
-                                request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
-                                request.Method = WebRequestMethods.Ftp.UploadFile;
+                                fileStream.CopyTo(ftpStream);
 
-                                using (Stream fileStream = File.OpenRead(file))
-
-                                using (Stream ftpStream = request.GetRequestStream())
-                                {
-                                    fileStream.CopyTo(ftpStream);
-
-                                }
-                                //var processes = Process.GetProcessesByName(file);
-
-                                //foreach (var proc in Process.GetProcessesByName(file))
-                                //{
-                                //    proc.Kill();
-                                //}
-                                //delete imges after coopy
-                                if (File.Exists(file))
-                                {
-                                    File.Delete(file);
-                                }
                             }
 
+                            //delete imges after coopy
+                            if (File.Exists(file))
+                            {
+                                File.Delete(file);
 
 
+
+                            }
+                            //int ColumnIndex = DGV_Files.CurrentCell.ColumnIndex;
+
+                            ////remove item from gridview 
+                            //DGV_Files.Rows.RemoveAt(ColumnIndex);
+                            //DGV_Files.Update();
+                            //DGV_Files.Parent.Refresh();
+                            
                         }
-                    }
-                    //this.Form1_Load(null, null);
 
-                    TXT_bookNumber.Clear();
-                    TXT_Book_recive_number.Clear();
-                    TXT_Subject.Clear();
-                    TXT_From.Clear();
-                    TXT_To.Clear();
-                    TXT_SearchKEys.Clear();
-                    TXT_notes.Clear();
+
+
+                    }
+                }
+                //this.Form1_Load(null, null);
+
+                TXT_bookNumber.Clear();
+                TXT_Book_recive_number.Clear();
+                TXT_Subject.Clear();
+                TXT_From.Clear();
+                TXT_To.Clear();
+                TXT_SearchKEys.Clear();
+                TXT_notes.Clear();
                 COM_bookStatus.SelectedIndex = 0;
-                COM_PaperType.SelectedIndex=0;
-                COM_priority.SelectedIndex=0;
-                COM_privicy.SelectedIndex=0;
-                COM_bookType.SelectedIndex=0;
-                 DT_bookDate.TabIndex=0;
+                COM_PaperType.SelectedIndex = 0;
+                COM_priority.SelectedIndex = 0;
+                COM_privicy.SelectedIndex = 0;
+                COM_bookType.SelectedIndex = 0;
+                DT_bookDate.TabIndex = 0;
                 DT_bookDate.Value = DateTime.Now;
                 DT_bookRecive_date.Value = DateTime.Now;
 
@@ -503,9 +533,55 @@ SELECT  [DepartmentID]
                     PicB_displayBOOK.Image.Dispose();
                     PicB_displayBOOK.Image = null;
                 }
+<<<<<<< Updated upstream
                 
  
  
+=======
+
+                //foreach (object o in COMLIST_assination.Items)
+                //{
+                //    COMLIST_assination.SetItemCheckState(0, CheckState.Unchecked);
+
+                //}
+                for (int i = 0; i < COMLIST_assination.Items.Count; i++)
+                {
+                    COMLIST_assination.SetItemCheckState(i, CheckState.Unchecked);
+
+                }
+
+
+                string[] Files2 = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "", "*.*");//put variable name instade of path
+                DataTable table = new DataTable();
+
+                table.Columns.Add("check", typeof(bool));
+                table.Columns.Add("File Name");
+
+                for (int i = 0; i < Files.Length; i++)
+                {
+                    FileInfo file = new FileInfo(Files[i]);
+
+                    table.Rows.Add(false, file.Name);
+
+
+                }
+
+                DGV_Files.DataSource = table;
+
+                DGV_Files.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                CHK_selectall.Visible = true;
+
+
+
+
+                folder_update();
+
+
+                MessageBox.Show("تم ارشفة الكتاب");
+
+
+
+>>>>>>> Stashed changes
             }
 
 
@@ -579,7 +655,10 @@ SELECT  [DepartmentID]
         private void button1_Click(object sender, EventArgs e)
         {
             ScanDialog sd = new ScanDialog();
+
+            
             sd.Show();
+            
         }
 
 
@@ -602,7 +681,7 @@ SELECT  [DepartmentID]
             Refresh_Folders();
         }
 
-
+         
 
         private void BTN_DELFolder_Click(object sender, EventArgs e)
         {
@@ -628,6 +707,7 @@ SELECT  [DepartmentID]
             {
                 Folder_Brows_DOC_Source.ShowDialog();
                 string Doc_source = Folder_Brows_DOC_Source.SelectedPath;
+<<<<<<< Updated upstream
 
                 Properties.Settings.Default.DOC_Source = Doc_source;
 
@@ -639,7 +719,65 @@ SELECT  [DepartmentID]
                 MessageBox.Show("الرجاء اختيار مصدر الملفات");
             }
            
+=======
 
+                Properties.Settings.Default.DOC_Source = Doc_source;
+
+                Properties.Settings.Default.Save();
+                this.Form1_Load(null, null);
+            }
+            catch
+            {
+                MessageBox.Show("الرجاء اختيار مصدر الملفات");
+            }
+
+
+        }
+
+      
+
+        private void FOLDERS_prefermCLick_Click(object sender, EventArgs e)
+        {
+          
+        }
+        //refres folder to display its files 
+      public  void folder_update ()
+
+        {
+            string[] Files = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "", "*.*");//put variable name instade of path
+            DataTable table = new DataTable();
+
+            table.Columns.Add("check", typeof(bool));
+            table.Columns.Add("File Name");
+
+            for (int i = 0; i < Files.Length; i++)
+            {
+                FileInfo file = new FileInfo(Files[i]);
+
+                table.Rows.Add(false, file.Name);
+
+
+            }
+
+            DGV_Files.DataSource = table;
+>>>>>>> Stashed changes
+
+            DGV_Files.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            CHK_selectall.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+        }
+
+        private void BTN_RefrshFolders_Click(object sender, EventArgs e)
+        {
+            Refresh_Folders();
         }
 
         //private void panel3_Paint(object sender, PaintEventArgs e)

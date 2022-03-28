@@ -68,9 +68,7 @@ namespace ArchiveSystem
 
 
 
-                    Login login = new Login();
-                    login.Hide();
-
+                   
                   
                        _user=user.ToString();
                     _userID = userID;
@@ -79,6 +77,9 @@ namespace ArchiveSystem
 
                     Form1 f1 = new Form1();
                     f1.Show();
+
+                    this.Hide();
+
 
                 }
                 else

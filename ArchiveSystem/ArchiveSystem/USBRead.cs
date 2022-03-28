@@ -67,7 +67,7 @@ namespace ArchiveSystem
                     if (ec == ErrorCode.None && bytesRead != 0)
                     {
                         Logger.Log("Received button signal");
-                        Scan.StartScan("d");
+                        Scan.StartScan();
                     }
                 }
             }

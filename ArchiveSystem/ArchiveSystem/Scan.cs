@@ -19,9 +19,9 @@ namespace ArchiveSystem
     { 
         public static  string  pictureNAME="";
         
-        public static void StartScan( string textbox1)
+        public static void StartScan()
         {
-            pictureNAME = textbox1;
+            //pictureNAME = textbox1;
            
             if (Program.config.SavePath == "")
             {
@@ -97,7 +97,7 @@ namespace ArchiveSystem
 
             Logger.Log("Finished scanning " + list.Count + " files");
             DateTime now = DateTime.Now;
-            String filename = Program.config.SavePath + "\\" + pictureNAME +"-"+ now.ToString("yy_MM_dd-H_mm_ss");
+            String filename = Program.config.SavePath + "\\" /*+ pictureNAME +"-"*/+ now.ToString("yy_MM_dd-H_mm_ss");
             //filename += "moh";
             int index = 1;
             
@@ -113,6 +113,7 @@ namespace ArchiveSystem
                 Logger.Log("Images saved in " + Program.config.SavePath);
 
             return list.Count;
+
         }
     }
 }

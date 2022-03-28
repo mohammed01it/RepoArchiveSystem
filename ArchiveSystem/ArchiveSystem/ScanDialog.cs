@@ -126,12 +126,13 @@ namespace ArchiveSystem
 
         private void bt_testScanner_Click(object sender, EventArgs e)
         {
-            
-            string pictureNAME = textBox1.Text;
-            Scan.StartScan(pictureNAME);
-           
+          
+            //string pictureNAME = textBox1.Text;
+            Scan.StartScan();
 
-
+            //Form1 f1 = new Form1();
+            //f1.Refresh_Folders();
+            //f1.Refresh_Folders();
         }
 
         private void check_tryFlatbed_CheckedChanged(object sender, EventArgs e)
@@ -239,6 +240,11 @@ namespace ArchiveSystem
         private void bt_connect_Click(object sender, EventArgs e)
         {
             ConnectButton();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

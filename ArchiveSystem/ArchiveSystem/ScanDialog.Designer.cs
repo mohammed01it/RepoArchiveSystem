@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.box_read = new System.Windows.Forms.TextBox();
             this.check_minimized = new System.Windows.Forms.CheckBox();
@@ -40,6 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.bt_connect = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.check_tryFlatbed = new System.Windows.Forms.CheckBox();
             this.check_useAdf = new System.Windows.Forms.CheckBox();
@@ -79,13 +79,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Button Settings";
             this.groupBox2.Visible = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(17, 181);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 84;
             // 
             // label8
             // 
@@ -164,6 +157,15 @@
             this.bt_connect.Text = "Connect";
             this.bt_connect.UseVisualStyleBackColor = true;
             this.bt_connect.Click += new System.EventHandler(this.bt_connect_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(17, 181);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 84;
+            this.textBox1.Visible = false;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // groupBox1
             // 

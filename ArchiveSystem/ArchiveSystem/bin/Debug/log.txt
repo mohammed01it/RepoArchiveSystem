@@ -1,6 +1,7 @@
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 3/24/2022 1:39:26 PM: Application started
 3/24/2022 1:40:29 PM: Application closed
 
@@ -21,6 +22,8 @@
 
 3/25/2022 12:36:03 AM: Application started
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 3/28/2022 8:39:40 AM: Application started
@@ -147,6 +150,9 @@
 3/28/2022 9:47:33 AM: Application started
 3/28/2022 9:47:33 AM: Configuration loaded
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

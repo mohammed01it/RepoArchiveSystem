@@ -182,9 +182,10 @@
             this.advanc_dgv_view_data_doc.Name = "advanc_dgv_view_data_doc";
             this.advanc_dgv_view_data_doc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.advanc_dgv_view_data_doc.RowTemplate.Height = 26;
-            this.advanc_dgv_view_data_doc.Size = new System.Drawing.Size(1496, 768);
+            this.advanc_dgv_view_data_doc.Size = new System.Drawing.Size(1496, 756);
             this.advanc_dgv_view_data_doc.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.advanc_dgv_view_data_doc.TabIndex = 411;
+            this.advanc_dgv_view_data_doc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advanc_dgv_view_data_doc_CellContentClick);
             this.advanc_dgv_view_data_doc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advanc_dgv_view_data_doc_CellDoubleClick);
             this.advanc_dgv_view_data_doc.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.advanc_dgv_view_data_doc_CellPainting);
             this.advanc_dgv_view_data_doc.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.advanc_dgv_view_data_doc_ColumnHeaderMouseClick);

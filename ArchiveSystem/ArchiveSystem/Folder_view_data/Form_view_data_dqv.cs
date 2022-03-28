@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Net;
+using System.Collections;
 
 namespace ArchiveSystem.Folder_view_data
 {
@@ -87,9 +88,14 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
 
             advanc_dgv_view_data_doc.Columns[0].HeaderCell.Style.BackColor = Color.DeepSkyBlue;
-           
             advanc_dgv_view_data_doc.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 11);
 
+
+            advanc_dgv_view_data_doc.AlternatingRowsDefaultCellStyle.BackColor = Color.Silver;
+            advanc_dgv_view_data_doc.RowsDefaultCellStyle.BackColor = Color.LightGray;
+
+            advanc_dgv_view_data_doc.RowsDefaultCellStyle.SelectionBackColor = Color.Orange;
+            advanc_dgv_view_data_doc.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
         }
 
         private void btn_search_claer_Click(object sender, EventArgs e)
@@ -149,12 +155,16 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
 
         /////////Code to read and download FTP files from the server/////////////
-        //Read FTP File
+        //You must first create a file on the server and set the FTP for it.To save files with
+        
+     //1-Read FTP File
 
+        //This variables is Existing in a file App.config in the program
         string ftp_server_Ip = ConfigurationManager.AppSettings["FTP_Server_Ip"];
         string ftp_server_username = ConfigurationManager.AppSettings["FTP_Server_user"];
         string ftp_server_password = ConfigurationManager.AppSettings["FTP_Server_pass"];
-
+       
+        //The path of the file on the client computer with which we will download the files from the FTP file temporarily, and then we delete the downloaded files
         string path_folder_client_temp = ConfigurationManager.AppSettings["Path_Folder_Client_Temp"];
 
         public string[] GetFileList()
@@ -185,7 +195,9 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
                 result.Remove(result.ToString().LastIndexOf('\n'), 1);
                 reader.Close();
                 response.Close();
+                
                 return result.ToString().Split('\n');
+               
             }
             catch (Exception ex)
             {
@@ -195,7 +207,7 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
             }
         }
 
-        //Download FTP Files
+        //2-Download FTP Files
         private void Download(string fileName)
         {
 
@@ -227,12 +239,16 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
                 ftpStream.Close();
                 outputStream.Close();
                 response.Close();
+
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
+        
         //Event Double Click DGV
         private void advanc_dgv_view_data_doc_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -243,31 +259,49 @@ FROM   dbo.ArchiveBooks_TBL INNER JOIN
 
                 System.IO.DirectoryInfo di = new DirectoryInfo(path_folder_client_temp);
 
+
+
+               
+
                 foreach (FileInfo file in di.GetFiles())
                 {
+                    ////////////important code/////////////
+                    //It allows us to delete when the file is used by the processor
+                    System.GC.Collect();
+                    System.GC.WaitForPendingFinalizers();
+                    //----------end-------------
+
+
                     file.Delete();
+                  
                 }
+
 
 
                 foreach (string file in files)
                 {
+
                     Download(file);
                 }
 
 
-
-
-
                 var path = string.Format(path_folder_client_temp);
 
+                Form_show_doc s_doc = new Form_show_doc();
+                s_doc.Show();
 
-                System.Diagnostics.Process.Start(path);
+                //System.Diagnostics.Process.Start(path);
 
             }
             catch (WebException ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void advanc_dgv_view_data_doc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
         //-----------------END------------------------
     }

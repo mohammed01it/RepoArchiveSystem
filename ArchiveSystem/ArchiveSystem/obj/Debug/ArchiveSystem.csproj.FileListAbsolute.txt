@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 C:\Users\mohab.MOHAMMED\Desktop\Github\RepoArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\ArchiveSystem.exe
 C:\Users\mohab.MOHAMMED\Desktop\Github\RepoArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\ArchiveSystem.pdb
 C:\Users\mohab.MOHAMMED\Desktop\Github\RepoArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.Properties.Resources.resources
@@ -25,6 +26,8 @@ C:\Users\mohab.MOHAMMED\Desktop\Github\RepoArchiveSystem\ArchiveSystem\ArchiveSy
 C:\Users\mohab.MOHAMMED\Desktop\Github\RepoArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.exe
 C:\Users\mohab.MOHAMMED\Desktop\Github\RepoArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.pdb
 =======
+=======
+>>>>>>> Stashed changes
 C:\Users\mohab.MOHAMMED\Desktop\Github\RepoArchiveSystem\RepoArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\ArchiveSystem.exe
 C:\Users\mohab.MOHAMMED\Desktop\Github\RepoArchiveSystem\RepoArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\AdvancedDataGridView.dll
 C:\Users\mohab.MOHAMMED\Desktop\Github\RepoArchiveSystem\RepoArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\MetroFramework.dll
@@ -50,4 +53,7 @@ C:\Users\mohab.MOHAMMED\Desktop\Github\RepoArchiveSystem\RepoArchiveSystem\Archi
 C:\Users\mohab.MOHAMMED\Desktop\Github\RepoArchiveSystem\RepoArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.exe
 C:\Users\mohab.MOHAMMED\Desktop\Github\RepoArchiveSystem\RepoArchiveSystem\ArchiveSystem\ArchiveSystem\obj\Debug\ArchiveSystem.pdb
 C:\Users\mohab.MOHAMMED\Desktop\Github\RepoArchiveSystem\RepoArchiveSystem\ArchiveSystem\ArchiveSystem\bin\Debug\ArchiveSystem.pdb
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

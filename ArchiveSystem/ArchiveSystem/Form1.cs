@@ -66,7 +66,11 @@ namespace ArchiveSystem
             catch
             {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 MessageBox.Show("الرجاء اختيار مصدر الفايلات");
+=======
+                MessageBox.Show("الرجاء اختيار مصدر الملفات");
+>>>>>>> Stashed changes
 =======
                 MessageBox.Show("الرجاء اختيار مصدر الملفات");
 >>>>>>> Stashed changes
@@ -198,7 +202,11 @@ SELECT  [DepartmentID]
             int x = metroTabControl1.TabCount;
             t.Text = "الارشيف العام";// + x
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             //metroTabControl1.SelectTab(x - 1);
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -213,6 +221,7 @@ SELECT  [DepartmentID]
         private void DGV_Folders_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
          
+
 
 
             String folderName = DGV_Folders.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -433,10 +442,13 @@ SELECT  [DepartmentID]
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                
                     //create folder FTP with same db index id
                     var Typee = COM_bookType.Text;// bring it from dropdown user chose
                                                           //var BookCat = "كتاب عادي";// bring it from dropdown user chose
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -444,6 +456,7 @@ SELECT  [DepartmentID]
                 //create folder with same db index id
                 var Typee = COM_bookType.Text;// bring it from dropdown user chose
                                               //var BookCat = "كتاب عادي";// bring it from dropdown user chose
+<<<<<<< Updated upstream
 
 
 
@@ -455,19 +468,47 @@ SELECT  [DepartmentID]
                     Console.WriteLine(resp.StatusCode);
                 }
 
+=======
+
+
+
+                WebRequest request_ = WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/");
+                request_.Method = WebRequestMethods.Ftp.MakeDirectory;
+                request_.Credentials = new NetworkCredential(FTP_user, FTP_pass);
+                using (var resp = (FtpWebResponse)request_.GetResponse())
+                {
+                    Console.WriteLine(resp.StatusCode);
+                }
+>>>>>>> Stashed changes
 
 
                 //create array of string with all local dir files names
 
+<<<<<<< Updated upstream
                 string[] Files = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "");//put variable here 
 
+=======
+                //create array of string with all local dir files names
+
+                string[] Files = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "");//put variable here 
+>>>>>>> Stashed changes
 
                 //get the record number (RecID)
 
+<<<<<<< Updated upstream
+=======
+                //get the record number (RecID)
+>>>>>>> Stashed changes
 
                 foreach (var item in files_checked)
                 { 
 
+<<<<<<< Updated upstream
+=======
+                foreach (var item in files_checked)
+                { 
+
+>>>>>>> Stashed changes
                     string filenamechecked = item.ToString();
                     foreach (string file in Files)
                     {
@@ -480,9 +521,15 @@ SELECT  [DepartmentID]
                             FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTP_ip + Typee + "/" + book_code + "/" + fn);
                             request.Credentials = new NetworkCredential(FTP_user, FTP_pass);
                             request.Method = WebRequestMethods.Ftp.UploadFile;
+<<<<<<< Updated upstream
 
                             using (Stream fileStream = File.OpenRead(file))
 
+=======
+
+                            using (Stream fileStream = File.OpenRead(file))
+
+>>>>>>> Stashed changes
                             using (Stream ftpStream = request.GetRequestStream())
                             {
                                 fileStream.CopyTo(ftpStream);
@@ -493,9 +540,15 @@ SELECT  [DepartmentID]
                             if (File.Exists(file))
                             {
                                 File.Delete(file);
+<<<<<<< Updated upstream
 
 
 
+=======
+
+
+
+>>>>>>> Stashed changes
                             }
                             //int ColumnIndex = DGV_Files.CurrentCell.ColumnIndex;
 
@@ -534,10 +587,13 @@ SELECT  [DepartmentID]
                     PicB_displayBOOK.Image = null;
                 }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 
  
  
 =======
+=======
+>>>>>>> Stashed changes
 
                 //foreach (object o in COMLIST_assination.Items)
                 //{
@@ -581,6 +637,9 @@ SELECT  [DepartmentID]
 
 
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             }
 
@@ -708,12 +767,16 @@ SELECT  [DepartmentID]
                 Folder_Brows_DOC_Source.ShowDialog();
                 string Doc_source = Folder_Brows_DOC_Source.SelectedPath;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 
                 Properties.Settings.Default.DOC_Source = Doc_source;
 
                 Properties.Settings.Default.Save();
                 this.Form1_Load(null, null);
             }
+<<<<<<< Updated upstream
             catch 
             {
                 MessageBox.Show("الرجاء اختيار مصدر الملفات");
@@ -731,7 +794,59 @@ SELECT  [DepartmentID]
                 MessageBox.Show("الرجاء اختيار مصدر الملفات");
             }
 
+=======
+            catch
+            {
+                MessageBox.Show("الرجاء اختيار مصدر الملفات");
+            }
 
+
+        }
+
+      
+
+        private void FOLDERS_prefermCLick_Click(object sender, EventArgs e)
+        {
+          
+        }
+        //refres folder to display its files 
+      public  void folder_update ()
+
+        {
+            string[] Files = Directory.GetFiles(Doc_source + @"\" + selectedFolder + "", "*.*");//put variable name instade of path
+            DataTable table = new DataTable();
+
+            table.Columns.Add("check", typeof(bool));
+            table.Columns.Add("File Name");
+
+            for (int i = 0; i < Files.Length; i++)
+            {
+                FileInfo file = new FileInfo(Files[i]);
+
+                table.Rows.Add(false, file.Name);
+
+
+            }
+
+            DGV_Files.DataSource = table;
+>>>>>>> Stashed changes
+
+            DGV_Files.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            CHK_selectall.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+        }
+
+        private void BTN_RefrshFolders_Click(object sender, EventArgs e)
+        {
+            Refresh_Folders();
         }
 
       
